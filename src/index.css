@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-light: #4ade80; /* Verde más claro (aprox Tailwind green-400) */
+  --color-primary: #16a34a;       /* Verde base (aprox Tailwind green-600) */
+  --color-primary-dark: #15803d;  /* Verde oscuro (aprox Tailwind green-700) */
+  
+  --color-secondary: #f3f4f6;
+  --color-secondary-dark: #1f2937;
+  
+  --font-sans: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  color: var(--color-secondary-dark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Botones base grandes y cuadrados según instrucción */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center;
+    @apply px-8 py-4 text-lg font-bold text-white;
+    @apply transition-all duration-300;
+    @apply bg-primary rounded-xl;
+    @apply hover:bg-primary-dark hover:shadow-lg hover:-translate-y-1;
+    @apply focus:outline-none focus:ring-4 focus:ring-primary/50;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center;
+    @apply px-8 py-4 text-lg font-bold text-primary;
+    @apply transition-all duration-300;
+    @apply bg-blue-50 border-2 border-primary/20 rounded-xl;
+    @apply hover:bg-blue-100 hover:border-primary/40;
+    @apply focus:outline-none focus:ring-4 focus:ring-primary/20;
+  }
+}
