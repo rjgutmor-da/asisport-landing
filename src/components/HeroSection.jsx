@@ -41,7 +41,7 @@ const HeroSection = () => {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a 
-                href="https://wa.me/56974631123?text=Hola,%20quiero%20ver%20cómo%20funciona%20AsiSport"
+                href="https://wa.me/59174631123?text=Hola,%20quiero%20ver%20cómo%20funciona%20AsiSport"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
