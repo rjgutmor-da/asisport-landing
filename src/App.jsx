@@ -7,6 +7,7 @@ import VisualDemo from './components/VisualDemo';
 import HowItWorks from './components/HowItWorks';
 import Benefits from './components/Benefits';
 import { Testimonial, FinalCTA, Footer } from './components/FinalSections';
+import Pricing from './components/Pricing';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
          <HowItWorks />
          <Benefits />
          <Testimonial />
+         <Pricing />
          
          <div className="px-4 sm:px-6 lg:px-8 mt-12 bg-white">
             <FinalCTA />
