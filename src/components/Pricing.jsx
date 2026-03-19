@@ -7,13 +7,13 @@ const Pricing = () => {
       price: '10',
       users: '3',
       students: '100',
-      branches: '2',
+      branches: '1',
       popular: false,
     },
     {
       name: 'Plan 2',
       price: '20',
-      users: '7',
+      users: '9',
       students: '250',
       branches: '3',
       popular: true,
@@ -21,7 +21,7 @@ const Pricing = () => {
     {
       name: 'Plan 3',
       price: '30',
-      users: '11',
+      users: '13',
       students: '400',
       branches: '4',
       popular: false,
@@ -29,7 +29,7 @@ const Pricing = () => {
     {
       name: 'Plan 4',
       price: '40',
-      users: '15',
+      users: '18',
       students: '600',
       branches: '6',
       popular: false,
@@ -56,51 +56,59 @@ const Pricing = () => {
           {plans.map((plan, index) => (
             <div 
               key={index} 
-              className={`relative flex flex-col p-8 rounded-3xl shadow-xl transition-transform duration-300 hover:-translate-y-2 ${
+              className={`relative flex flex-col p-8 rounded-3xl shadow-xl transition-all duration-500 hover:-translate-y-3 ${
                 plan.popular 
-                  ? 'bg-primary text-white ring-4 ring-primary/30 scale-105 z-10' 
-                  : 'bg-white text-gray-900 border border-gray-100'
+                  ? 'bg-gradient-to-br from-primary-dark via-primary to-primary-dark text-white ring-8 ring-primary/10 scale-105 z-10' 
+                  : 'bg-white text-gray-900 border border-gray-100 hover:shadow-2xl'
               }`}
             >
               {plan.popular && (
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <span className="bg-gradient-to-r from-orange-400 to-red-500 text-white text-xs font-bold uppercase tracking-widest py-1 px-3 rounded-full shadow-md">
-                    Más Popular
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+                  <span className="bg-gradient-to-r from-orange-400 to-red-600 text-white text-xs font-black uppercase tracking-widest py-1.5 px-4 rounded-full shadow-lg border-2 border-white/20">
+                    Súper Recomendado
                   </span>
                 </div>
               )}
               
-              <div className="mb-6">
-                <h3 className={`text-xl font-bold mb-2 ${plan.popular ? 'text-white' : 'text-gray-900'}`}>
+              <div className="mb-6 relative">
+                <h3 className={`text-xl font-bold mb-2 ${plan.popular ? 'text-white' : 'text-gray-900 opacity-80'}`}>
                   {plan.name}
                 </h3>
-                <div className="flex items-baseline text-5xl font-extrabold">
-                  <span className="text-3xl mr-1">$us</span>
+                <div className="flex items-baseline text-5xl font-black">
+                  <span className="text-3xl font-light mr-1">$us</span>
                   {plan.price}
-                  <span className={`text-lg font-medium ml-2 ${plan.popular ? 'text-blue-100' : 'text-gray-500'}`}>
+                  <span className={`text-lg font-medium ml-2 ${plan.popular ? 'text-green-100' : 'text-gray-500'}`}>
                     /mes
                   </span>
                 </div>
               </div>
 
-              <ul className={`flex-1 space-y-4 mb-8 font-medium ${plan.popular ? 'text-blue-50' : 'text-gray-600'}`}>
-                <li className="flex items-center">
-                  <svg className={`w-5 h-5 mr-3 flex-shrink-0 ${plan.popular ? 'text-blue-200' : 'text-primary'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>Hasta <strong>{plan.users}</strong> Usuarios</span>
+              <div className={`h-px w-full mb-8 ${plan.popular ? 'bg-white/20' : 'bg-gray-100'}`}></div>
+
+              <ul className={`flex-1 space-y-4 mb-10 font-medium ${plan.popular ? 'text-green-50' : 'text-gray-600'}`}>
+                <li className="flex items-center group">
+                  <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mr-3 transition-colors ${plan.popular ? 'bg-white/20 text-white' : 'bg-primary/10 text-primary'}`}>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </div>
+                  <span><strong className={plan.popular ? 'text-white' : 'text-gray-900'}>{plan.users}</strong> Usuarios</span>
                 </li>
-                <li className="flex items-center">
-                  <svg className={`w-5 h-5 mr-3 flex-shrink-0 ${plan.popular ? 'text-blue-200' : 'text-primary'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>Hasta <strong>{plan.students}</strong> Alumnos</span>
+                <li className="flex items-center group">
+                  <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mr-3 transition-colors ${plan.popular ? 'bg-white/20 text-white' : 'bg-primary/10 text-primary'}`}>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </div>
+                  <span><strong className={plan.popular ? 'text-white' : 'text-gray-900'}>{plan.students}</strong> Alumnos</span>
                 </li>
-                <li className="flex items-center">
-                  <svg className={`w-5 h-5 mr-3 flex-shrink-0 ${plan.popular ? 'text-blue-200' : 'text-primary'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>Hasta <strong>{plan.branches}</strong> Sucursales</span>
+                <li className="flex items-center group">
+                  <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mr-3 transition-colors ${plan.popular ? 'bg-white/20 text-white' : 'bg-primary/10 text-primary'}`}>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </div>
+                  <span><strong className={plan.popular ? 'text-white' : 'text-gray-900'}>{plan.branches}</strong> {plan.branches === '1' ? 'Sucursal' : 'Sucursales'}</span>
                 </li>
               </ul>
 
@@ -108,10 +116,10 @@ const Pricing = () => {
                 href={`https://wa.me/59174631123?text=Hola,%20me%20interesa%20el%20${plan.name}%20de%20$us${plan.price}/mes`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-full py-3 px-6 rounded-xl font-bold text-center transition-colors ${
+                className={`w-full py-4 px-6 rounded-2xl font-black text-center transition-all duration-300 transform active:scale-95 ${
                   plan.popular 
-                    ? 'bg-white text-primary hover:bg-gray-50 shadow-lg' 
-                    : 'bg-primary/10 text-primary hover:bg-primary hover:text-white'
+                    ? 'bg-white text-primary hover:bg-gray-50 shadow-xl hover:shadow-2xl' 
+                    : 'bg-primary text-white hover:bg-primary-dark shadow-lg hover:shadow-xl'
                 }`}
               >
                 Elegir {plan.name}
