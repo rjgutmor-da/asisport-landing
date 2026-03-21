@@ -14,7 +14,7 @@ Esta sección debe responder en **3 segundos**:
 
 ### Subheadline
 
-AsiSport es la plataforma que permite a **escuelas de fútbol y academias deportivas** registrar asistencia en segundos, comunicarse con los padres y organizar sus alumnos desde un solo lugar.
+AsiSport permite a las escuelas de fútbol, registrar asistencia en segundos, hacer listas de buena fe, seleccionar convocados y enviar la lista por WhatsApp, además que facilita la comunicación con los padres.
 
 ### Micro beneficios
 

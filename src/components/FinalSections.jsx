@@ -47,12 +47,12 @@ export const FinalCTA = () => {
         
         <div className="flex flex-col items-center">
           <a 
-            href="https://wa.me/59174631123?text=Hola,%20quiero%20ver%20cómo%20funciona%20AsiSport"
+            href="https://wa.me/59174631123?text=Me%20gustaria%20agendar%20una%20cita%20de%2015%20minutos%20para%20conocer%20mas%20AsiSport"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-5 text-xl font-bold text-primary transition-all duration-300 bg-white rounded-2xl hover:bg-gray-50 hover:shadow-2xl hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-white/50 mb-4"
           >
-             Solicitar demostración
+             Enviar Solicitud
              <svg className="ml-3 w-6 h-6 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
              </svg>
@@ -86,6 +86,9 @@ export const Footer = () => {
                 </svg>
                 WhatsApp: +591 74631123
               </a>
+            </p>
+            <p className="text-sm text-gray-400 font-medium mb-1">
+              <a href="mailto:rjgutmor@gmail.com" className="hover:text-white transition-colors">rjgutmor@gmail.com</a>
             </p>
             <p className="text-sm text-gray-500 font-medium">
               Copyright © {new Date().getFullYear()} AsiSport by Saas Factory

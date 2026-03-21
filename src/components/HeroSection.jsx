@@ -23,7 +23,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-lg sm:text-xl text-gray-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-              AsiSport es la plataforma que permite a escuelas de fútbol y academias deportivas registrar asistencia en segundos, comunicarse con los padres y organizar sus alumnos desde un solo lugar.
+              AsiSport permite a las escuelas de fútbol, registrar asistencia en segundos, hacer listas de buena fe, seleccionar convocados y enviar la lista por WhatsApp, además que facilita la comunicación con los padres.
             </p>
 
             {/* Micro benefits list */}
@@ -41,7 +41,7 @@ const HeroSection = () => {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a 
-                href="https://wa.me/59174631123?text=Hola,%20quiero%20ver%20cómo%20funciona%20AsiSport"
+                href="/VideoDemo.mp4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"

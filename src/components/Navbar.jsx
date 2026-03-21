@@ -25,12 +25,12 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="flex items-center">
             <a 
-              href="https://wa.me/59174631123?text=Hola,%20quiero%20ver%20cómo%20funciona%20AsiSport"
+              href="https://wa.me/59174631123?text=Me%20gustaria%20agendar%20una%20cita%20de%2015%20minutos%20para%20conocer%20mas%20AsiSport"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white transition-all duration-300 bg-primary rounded-xl hover:bg-primary-dark hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-primary/50"
             >
-              Pedir Demo
+              Agendar Demo
             </a>
             
             {/* Mobile menu button */}
