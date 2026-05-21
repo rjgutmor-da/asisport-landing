@@ -9,7 +9,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <img 
               className="h-12 w-auto" 
-              src="/LogoHorizontal.png" 
+              src="/LogoSaasport.png" 
               alt="AsiSport Logo" 
             />
           </div>

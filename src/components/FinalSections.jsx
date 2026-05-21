@@ -90,6 +90,11 @@ export const Footer = () => {
             <p className="text-sm text-gray-400 font-medium mb-1">
               <a href="mailto:rjgutmor@gmail.com" className="hover:text-white transition-colors">rjgutmor@gmail.com</a>
             </p>
+            <p className="text-sm text-gray-400 font-medium mb-2">
+              <a href="/plantillas_migracion_2026.html" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-light hover:underline transition-colors">
+                Plantillas de Migración 2026
+              </a>
+            </p>
             <p className="text-sm text-gray-500 font-medium">
               Copyright © {new Date().getFullYear()} AsiSport by Saas Factory
             </p>

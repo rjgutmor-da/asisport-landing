@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantillas de Importación de Datos - Gestión 2026</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- MathJax para Fórmulas -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --bg-body: #0b0d11;
+            --bg-sidebar: #111318;
+            --bg-card: #171a22;
+            --bg-card-hover: #1e222d;
+            --bg-alert-info: rgba(0, 188, 212, 0.08);
+            --bg-alert-warn: rgba(239, 68, 68, 0.08);
+            --color-text-primary: #f3f4f6;
+            --color-text-secondary: #9ca3af;
+            --color-text-muted: #6b7280;
+            --color-cyan: #00bcd4;
+            --color-green: #10b981;
+            --color-red: #ef4444;
+            --color-orange: #ff7000;
+            --border-color: #242936;
+            --border-focus: #3b82f6;
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+            --font-title: 'Outfit', sans-serif;
+            --sidebar-width: 280px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-body);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* BARRA LATERAL (SIDEBAR) */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .sidebar-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 0;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-brand img {
+            max-height: 48px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-nav a:hover, 
+        .sidebar-nav a.active {
+            color: var(--color-text-primary);
+            background-color: var(--bg-card);
+        }
+
+        .sidebar-nav a.active {
+            border-left: 3px solid var(--color-orange);
+            border-radius: 0 8px 8px 0;
+            padding-left: calc(1rem - 3px);
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 3rem 4rem;
+            max-width: 1200px;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-family: var(--font-title);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--color-text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: var(--color-text-secondary);
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .subtitle-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(255, 112, 0, 0.1);
+            color: var(--color-orange);
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        section {
+            margin-bottom: 4.5rem;
+            scroll-margin-top: 2rem;
+        }
+
+        h2 {
+            font-family: var(--font-title);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--color-text-primary);
+        }
+
+        h2 i {
+            color: var(--color-orange);
+        }
+
+        p {
+            color: var(--color-text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        strong {
+            color: var(--color-text-primary);
+            font-weight: 600;
+        }
+
+        /* TABLAS ESTILIZADAS */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-card);
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(23, 26, 34, 0.8);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            font-family: var(--font-title);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: var(--bg-card-hover);
+        }
+
+        td strong {
+            font-family: var(--font-title);
+        }
+
+        /* BADGES */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-required {
+            background-color: rgba(239, 68, 68, 0.15);
+            color: var(--color-red);
+        }
+
+        .badge-optional {
+            background-color: rgba(156, 163, 175, 0.1);
+            color: var(--color-text-secondary);
+        }
+
+        /* CALLOUTS / ALERTAS */
+        .callout {
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid transparent;
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        .callout-info {
+            background-color: var(--bg-alert-info);
+            border-color: rgba(0, 188, 212, 0.2);
+        }
+
+        .callout-warning {
+            background-color: var(--bg-alert-warn);
+            border-color: rgba(239, 68, 68, 0.2);
+        }
+
+        .callout-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .callout-info .callout-icon {
+            color: var(--color-cyan);
+        }
+
+        .callout-warning .callout-icon {
+            color: var(--color-red);
+        }
+
+        .callout-content {
+            flex: 1;
+        }
+
+        .callout-content h4 {
+            font-family: var(--font-title);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-primary);
+        }
+
+        .callout-content p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        /* SIMULADOR DE TARJETAS DEL PERFIL */
+        .cards-preview-container {
+            margin: 2rem 0;
+        }
+
+        .cards-preview-title {
+            font-family: var(--font-title);
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+        }
+
+        .profile-card-deuda::after { background-color: var(--color-red); }
+        .profile-card-ingresos::after { background-color: var(--color-green); }
+        .profile-card-inicio::after { background-color: var(--color-cyan); }
+        .profile-card-actividad::after { background-color: var(--color-cyan); }
+
+        .profile-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .profile-card-title {
+            font-family: var(--font-title);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-secondary);
+            font-weight: 600;
+        }
+
+        .profile-card-icon {
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        .profile-card-deuda .profile-card-icon { color: var(--color-red); }
+        .profile-card-ingresos .profile-card-icon { color: var(--color-green); }
+        .profile-card-inicio .profile-card-icon { color: var(--color-cyan); }
+        .profile-card-actividad .profile-card-icon { color: var(--color-cyan); }
+
+        .profile-card-value {
+            font-family: var(--font-title);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: auto;
+        }
+
+        .profile-card-deuda .profile-card-value { color: var(--color-red); }
+        .profile-card-ingresos .profile-card-value { color: var(--color-green); }
+        .profile-card-inicio .profile-card-value { color: var(--color-cyan); }
+        .profile-card-actividad .profile-card-value { color: var(--color-cyan); }
+
+        /* LISTAS */
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text-secondary);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        li strong {
+            color: var(--color-text-primary);
+        }
+
+        .rules-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .rules-list li {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.25rem 1.5rem;
+            border-radius: 10px;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .rules-list li i {
+            color: var(--color-orange);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .code-box {
+            background-color: #08090c;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.2rem 0.4rem;
+            font-family: monospace;
+            color: #ff79c6;
+            font-size: 0.9em;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 1024px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding: 1.5rem;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA LATERAL -->
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <img src="/LogoSaasport.png" alt="Logo Saasport">
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#intro" class="active"><i class="fa-solid fa-circle-info"></i> Introducción</a>
+            <a href="#cronograma"><i class="fa-solid fa-calendar-days"></i> Cronograma</a>
+            <a href="#alumnos"><i class="fa-solid fa-user-graduate"></i> 1. Plantilla Alumnos</a>
+            <a href="#proveedores"><i class="fa-solid fa-truck"></i> 2. Proveedores</a>
+            <a href="#ingresos"><i class="fa-solid fa-arrow-down-long"></i> 3. Ingresos 2026</a>
+            <a href="#egresos"><i class="fa-solid fa-arrow-up-long"></i> 4. Egresos 2026</a>
+            <a href="#saldos-iniciales"><i class="fa-solid fa-scale-balanced"></i> 5. Saldos Iniciales</a>
+            <a href="#reglas-oro"><i class="fa-solid fa-star"></i> Reglas de Oro</a>
+        </nav>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main-content">
+        <header>
+            <div class="subtitle-badge">
+                <i class="fa-solid fa-sparkles"></i> Documentación de Migración
+            </div>
+            <h1 id="intro">Plantillas de Importación de Datos (Gestión 2026)</h1>
+            <p>Guía de estructura de archivos y formatos de columna requeridos para realizar la carga masiva inicial de la escuela deportiva.</p>
+        </header>
+
+        <section>
+            <h2><i class="fa-solid fa-circle-info"></i> Modelo Financiero del Sistema</h2>
+            <p>El sistema financiero opera bajo un <strong>modelo simplificado de flujos de caja y cuentas (CxC/CxP)</strong>. Esto significa que <strong>no se requiere partida doble, libros diarios complejos ni asientos manuales</strong>. Toda la información se genera y actualiza automáticamente a partir de transacciones básicas de cobro, facturación y pago.</p>
+        </section>
+
+        <!-- SECCIÓN CRONOGRAMA -->
+        <section id="cronograma">
+            <h2><i class="fa-solid fa-calendar-days"></i> Cronograma de Implementación</h2>
+            <p>Cronograma estructurado de actividades y tiempos estimados para completar con éxito la migración y puesta en marcha del sistema:</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50px;">#</th>
+                            <th>Detalle</th>
+                            <th>Responsable</th>
+                            <th>Tiempo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td>
+                                <span>Llenado del formulario</span>
+                                <span style="margin-left: 10px;">
+                                    <button onclick="toggleFormLink(this)" style="background-color: var(--color-orange); color: #fff; border: none; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; cursor: pointer; font-weight: 600; font-family: var(--font-title); display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s ease;">
+                                        <i class="fa-solid fa-eye"></i> Revelar Enlace
+                                    </button>
+                                    <a id="form-link" href="https://forms.gle/dBAzMLyD1q5qhgvx8" target="_blank" style="display: none; color: var(--color-cyan); margin-left: 10px; font-weight: 600; text-decoration: underline;">https://forms.gle/dBAzMLyD1q5qhgvx8</a>
+                                </span>
+                            </td>
+                            <td><span class="badge" style="background-color: rgba(0, 188, 212, 0.1); color: var(--color-cyan);">Cliente</span></td>
+                            <td><strong>5 minutos</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td>Dar de alta al Superadministrador</td>
+                            <td><span class="badge" style="background-color: rgba(255, 112, 0, 0.1); color: var(--color-orange);">Saasport</span></td>
+                            <td><strong>24 horas</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td>Rellenar sucursales, usuarios, canchas y horarios</td>
+                            <td><span class="badge" style="background-color: rgba(0, 188, 212, 0.1); color: var(--color-cyan);">Cliente</span></td>
+                            <td><strong>30 minutos</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td>Revisar conceptos</td>
+                            <td><span class="badge" style="background-color: rgba(0, 188, 212, 0.1); color: var(--color-cyan);">Cliente</span></td>
+                            <td><strong>30 minutos</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>5</strong></td>
+                            <td>Crear plantillas de importación según indicaciones</td>
+                            <td><span class="badge" style="background-color: rgba(0, 188, 212, 0.1); color: var(--color-cyan);">Cliente</span></td>
+                            <td><strong>-</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>6</strong></td>
+                            <td>Cargar plantillas de importación al sistema</td>
+                            <td><span class="badge" style="background-color: rgba(255, 112, 0, 0.1); color: var(--color-orange);">Saasport</span></td>
+                            <td><strong>48 horas</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>7</strong></td>
+                            <td>Periodo de Inducción online, 3 sesiones de 1 hora</td>
+                            <td><span class="badge" style="background-color: rgba(255, 112, 0, 0.1); color: var(--color-orange);">Saasport</span></td>
+                            <td><strong>1 semana</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 1. ALUMNOS -->
+        <section id="alumnos">
+            <h2><i class="fa-solid fa-user-graduate"></i> 1. Plantilla de Alumnos (alumnos.xlsx o alumnos.csv)</h2>
+            <p>Esta plantilla se utiliza para registrar a los estudiantes de la escuela y asociar opcionalmente sus profesores, horarios y canchas de entrenamiento. También define los <strong>valores acumulados iniciales consolidados al 31 de diciembre de 2025</strong> que alimentan directamente sus perfiles.</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Columna (Excel)</th>
+                            <th>Tipo</th>
+                            <th>Obligatorio</th>
+                            <th>Descripción / Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nombres</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Nombres del deportista. <em>Ej: Juan Pedro</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Apellidos</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Apellidos del deportista. <em>Ej: Pérez Gómez</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nacimiento</strong></td>
+                            <td>Fecha</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Formato <span class="code-box">AAAA-MM-DD</span>. <em>Ej: 2012-05-15</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Carnet</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Cédula de Identidad (CI). <em>Ej: 9876543</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Telefono Deportista</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Número de celular propio. <em>Ej: 77123456</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nombre Padre</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Nombre del tutor masculino. <em>Ej: Roberto Pérez</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Telefono Padre</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Celular del padre. <em>Ej: 77112233</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nombre Madre</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Nombre de la madre. <em>Ej: María Gómez</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Telefono Madre</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Celular de la madre. <em>Ej: 77223344</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fecha Inicio</strong></td>
+                            <td>Fecha</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Fecha en la que ingresó a la escuela. Alimenta la tarjeta <strong>FECHA DE INICIO</strong>. <em>Ej: 2023-05-31</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ingresos Iniciales</strong></td>
+                            <td>Número</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Monto acumulado pagado por el alumno <strong>hasta el 31/12/2025</strong>. Alimenta la tarjeta <strong>TOTAL INGRESOS</strong>. <em>Ej: 16445.00</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Meses Permanencia Inicial</strong></td>
+                            <td>Número</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Total de meses que el alumno estuvo activo <strong>hasta el 31/12/2025</strong>. Alimenta la tarjeta <strong>MESES DE ACTIVIDAD</strong>. <em>Ej: 31</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Saldo Inicial Deuda</strong></td>
+                            <td>Número</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Monto que adeuda a la escuela al 31/12/2025. Alimenta la tarjeta <strong>TOTAL DEUDA</strong>. <em>Ej: 340.00</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Saldo Inicial Anticipo</strong></td>
+                            <td>Número</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Monto que tiene a favor (pago adelantado) al 31/12/2025. <em>Ej: 500.00</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Profesor</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Nombre del entrenador asignado (debe coincidir con el sistema). <em>Ej: Wilmar Cardozo</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cancha</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Cancha donde entrena. <em>Ej: Cilindro-1</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Horario</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Formato <span class="code-box">HH:MM</span>. <em>Ej: 17:00</em></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- VISTA PREVIA INTERACTIVA DE LAS TARJETAS -->
+            <div class="cards-preview-container">
+                <div class="cards-preview-title"><i class="fa-solid fa-eye"></i> Visualización en el Perfil del Alumno:</div>
+                <div class="cards-grid">
+                    <div class="profile-card profile-card-deuda">
+                        <div class="profile-card-header">
+                            <span class="profile-card-title">Total Deuda</span>
+                            <i class="fa-solid fa-circle-exclamation profile-card-icon"></i>
+                        </div>
+                        <div class="profile-card-value">Bs 340,00</div>
+                    </div>
+                    <div class="profile-card profile-card-ingresos">
+                        <div class="profile-card-header">
+                            <span class="profile-card-title">Total Ingresos</span>
+                            <i class="fa-solid fa-wallet profile-card-icon"></i>
+                        </div>
+                        <div class="profile-card-value">Bs 16.445,00</div>
+                    </div>
+                    <div class="profile-card profile-card-inicio">
+                        <div class="profile-card-header">
+                            <span class="profile-card-title">Fecha de Inicio</span>
+                            <i class="fa-solid fa-calendar profile-card-icon"></i>
+                        </div>
+                        <div class="profile-card-value">31 may 2023</div>
+                    </div>
+                    <div class="profile-card profile-card-actividad">
+                        <div class="profile-card-header">
+                            <span class="profile-card-title">Meses de Actividad</span>
+                            <i class="fa-solid fa-clock profile-card-icon"></i>
+                        </div>
+                        <div class="profile-card-value">34 Meses</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout callout-info">
+                <div class="callout-icon"><i class="fa-solid fa-circle-info"></i></div>
+                <div class="callout-content">
+                    <h4>📌 Lógica de Cálculo de Indicadores</h4>
+                    <p>Los campos se consolidan al **31/12/2025**. A partir del 1 de enero de 2026, el sistema actualizará dinámicamente estas tarjetas con las siguientes relaciones:</p>
+                    <ul style="margin: 0.5rem 0 0 1.25rem;">
+                        <li><strong>Tarjeta Total Ingresos:</strong> \(\text{Ingresos Iniciales} + \sum \text{Pagos recibidos en 2026}\)</li>
+                        <li><strong>Tarjeta Meses de Actividad:</strong> \(\text{Meses Permanencia Inicial} + \text{Mensualidades registradas en 2026}\)</li>
+                        <li><strong>Tarjeta Total Deuda:</strong> \(\text{Saldo Inicial Deuda} + \sum \text{Nuevas deudas 2026} - \sum \text{Pagos aplicados a deuda}\)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2. PROVEEDORES -->
+        <section id="proveedores">
+            <h2><i class="fa-solid fa-truck"></i> 2. Plantilla de Proveedores (proveedores.xlsx o proveedores.csv)</h2>
+            <p>Se utiliza para el registro maestro de proveedores de insumos, servicios, personal administrativo o profesores, estableciendo además los saldos comerciales iniciales.</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Columna (Excel)</th>
+                            <th>Tipo</th>
+                            <th>Obligatorio</th>
+                            <th>Descripción / Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nombre</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Nombre comercial o completo. <em>Ej: Distribuidora Deportiva Oriente</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contacto</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Nombre del representante. <em>Ej: Carlos Mendoza</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>NIT CI</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Identificación fiscal o personal. <em>Ej: 1020304025</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Telefono</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Celular o teléfono de contacto. <em>Ej: 3345678</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Direccion</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Ubicación física. <em>Ej: Av. Bush 3er Anillo</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Activo</strong></td>
+                            <td>Booleano</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td><span class="code-box">VERDADERO</span> o <span class="code-box">FALSO</span>. Por defecto VERDADERO.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Saldo Inicial Deuda</strong></td>
+                            <td>Número</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Monto que la escuela adeuda a este proveedor al 31/12/2025. <em>Ej: 1200.00</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Saldo Inicial Anticipo</strong></td>
+                            <td>Número</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Monto que la escuela pagó por adelantado al proveedor al 31/12/2025. <em>Ej: 500.00</em></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3. INGRESOS 2026 -->
+        <section id="ingresos">
+            <h2><i class="fa-solid fa-arrow-down-long"></i> 3. Plantilla de Ingresos de la Gestión 2026 (ingresos_2026.xlsx)</h2>
+            <p>Se utiliza para registrar los cobros realizados desde el 1 de enero de 2026 en adelante. Al importarse, el sistema genera de forma automática la cuenta por cobrar en estado <em>pagada</em> e ingresa los fondos en la caja/banco indicada.</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Columna (Excel)</th>
+                            <th>Tipo</th>
+                            <th>Obligatorio</th>
+                            <th>Descripción / Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Fecha</strong></td>
+                            <td>Fecha</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Fecha del cobro (<span class="code-box">AAAA-MM-DD</span>). <em>Ej: 2026-02-05</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Alumno Nombres</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-required">Sí*</span></td>
+                            <td>Debe coincidir exactamente con la plantilla de alumnos. <em>Ej: Juan Pedro</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Alumno Apellidos</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-required">Sí*</span></td>
+                            <td>Debe coincidir exactamente con la plantilla de alumnos. <em>Ej: Pérez Gómez</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Descripcion</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Detalle descriptivo. <em>Ej: Pago Mensualidad de Febrero 2026</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Monto Total</strong></td>
+                            <td>Número</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Monto cobrado en bolivianos (Bs). <em>Ej: 250.00</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Concepto</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Debe coincidir con el catálogo de ingresos. <em>Ej: Mensualidad, Uniformes, Venta de Entradas</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nro Recibo</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Número de factura o recibo. <em>Ej: REC-2026-0045</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Caja Destino</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Cuenta de destino de fondos. <em>Ej: Banco Economico, Caja Cilindro</em></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><small>* Nota: Si el ingreso no está asociado a un alumno específico (p. ej. auspicio o venta general), los campos de alumnos se dejan en blanco o se rellenan con "General".</small></p>
+        </section>
+
+        <!-- SECCIÓN 4. EGRESOS 2026 -->
+        <section id="egresos">
+            <h2><i class="fa-solid fa-arrow-up-long"></i> 4. Plantilla de Egresos de la Gestión 2026 (egresos_2026.xlsx)</h2>
+            <p>Se utiliza para registrar los pagos fijos, compras de material o salarios ejecutados a partir del 1 de enero de 2026. Genera automáticamente una cuenta por pagar pagada y debita los fondos de la caja origen.</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Columna (Excel)</th>
+                            <th>Tipo</th>
+                            <th>Obligatorio</th>
+                            <th>Descripción / Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Fecha</strong></td>
+                            <td>Fecha</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Fecha del pago (<span class="code-box">AAAA-MM-DD</span>). <em>Ej: 2026-01-20</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Proveedor</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Debe coincidir con la lista de proveedores o personal. <em>Ej: Wilmar Cardozo</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Descripcion</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Detalle descriptivo. <em>Ej: Compra de 10 pelotas de entrenamiento</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Monto Total</strong></td>
+                            <td>Número</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Monto desembolsado en bolivianos (Bs). <em>Ej: 1200.00</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Concepto</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Debe coincidir con el catálogo de gastos. <em>Ej: Material Deportivo, Sueldos y Salarios, Limpieza</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Referencia Pago</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-optional">No</span></td>
+                            <td>Cheque, transferencia o recibo. <em>Ej: TRANSF-90234</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Caja Origen</strong></td>
+                            <td>Texto</td>
+                            <td><span class="badge badge-required">Sí</span></td>
+                            <td>Caja o banco desde donde salieron los fondos. <em>Ej: Banco Economico, Caja Cilindro</em></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5. SALDOS INICIALES -->
+        <section id="saldos-iniciales">
+            <h2><i class="fa-solid fa-scale-balanced"></i> 5. Configuración de Saldos Iniciales (Corte al 31 de Diciembre de 2025)</h2>
+            <p>Los saldos iniciales representan el punto de partida financiero de la escuela deportiva previo a cualquier registro del año 2026. Todos los saldos iniciales se registran con fecha de corte de <strong>31 de diciembre de 2025</strong>.</p>
+
+            <div class="callout callout-warning">
+                <div class="callout-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div class="callout-content">
+                    <h4>⚠️ Criterio de Importación en Base de Datos</h4>
+                    <p>Aunque el usuario ingresa de forma sencilla los importes dentro de las columnas <span class="code-box">Saldo Inicial Deuda</span> o <span class="code-box">Saldo Inicial Anticipo</span> en los archivos Excel de Alumnos y Proveedores, el script de carga automatizado procesará estos datos creando los registros correspondientes en Supabase bajo la fecha <strong>2025-12-31</strong> de la siguiente manera:</p>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 1rem; font-family: var(--font-title); font-size: 1.25rem;">A. Procesamiento de Saldos de Alumnos</h3>
+            <ul>
+                <li><strong>Si el Alumno DEBE dinero:</strong> Se genera un registro de cuenta por cobrar (<span class="code-box">cuentas_cobrar</span>) con fecha <span class="code-box">2025-12-31</span>, concepto <span class="code-box">Saldo Inicial</span>, estado <strong><span class="code-box">pendiente</span></strong>, y <span class="code-box">es_anticipo = FALSO</span>.</li>
+                <li><strong>Si el Alumno tiene SALDO A FAVOR (Anticipo):</strong> Se genera un registro con fecha <span class="code-box">2025-12-31</span>, concepto <span class="code-box">Saldo Inicial</span>, estado <strong><span class="code-box">pendiente</span></strong> y <span class="code-box">es_anticipo = VERDADERO</span>.</li>
+            </ul>
+
+            <h3 style="margin-bottom: 1rem; font-family: var(--font-title); font-size: 1.25rem; margin-top: 2rem;">B. Procesamiento de Saldos de Proveedores</h3>
+            <ul>
+                <li><strong>Si la escuela DEBE al Proveedor/Personal:</strong> Se crea un registro en cuentas por pagar (<span class="code-box">cuentas_pagar</span>) con fecha <span class="code-box">2025-12-31</span>, concepto <span class="code-box">Saldo Inicial</span>, estado <strong><span class="code-box">pendiente</span></strong> y <span class="code-box">es_anticipo = FALSO</span>.</li>
+                <li><strong>Si la escuela tiene anticipo a favor (pago adelantado):</strong> Se crea una cuenta por pagar con fecha <span class="code-box">2025-12-31</span>, estado <strong><span class="code-box">pendiente</span></strong> y <span class="code-box">es_anticipo = VERDADERO</span>.</li>
+            </ul>
+
+            <h3 style="margin-bottom: 1rem; font-family: var(--font-title); font-size: 1.25rem; margin-top: 2rem;">C. Saldos Iniciales de Cajas y Bancos (Dinero Disponible)</h3>
+            <p>Para registrar el dinero total inicial que tiene la escuela en sus cuentas bancarias y cajas físicas al comenzar la gestión:</p>
+            <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li>Se ingresa como una transacción de cobro directa (sin alumno asociado) con fecha <strong>2025-12-31</strong>.</li>
+                <li>Descripción: <span class="code-box">Apertura de Saldo Inicial - Gestión 2026</span>.</li>
+                <li>Concepto: <span class="code-box">Saldo Inicial</span>.</li>
+                <li>Monto: Saldo conciliado disponible al cierre del 2025.</li>
+                <li>Estado: <strong>pagada</strong>.</li>
+                <li><strong>Efecto:</strong> El trigger interno de la base de datos (<span class="code-box">fn_actualizar_saldo_caja_v2</span>) establecerá este monto como el balance inicial. Los movimientos registrados en la gestión 2026 sumarán o restarán directamente sobre este valor.</li>
+            </ol>
+        </section>
+
+        <!-- SECCIÓN REGLAS DE ORO -->
+        <section id="reglas-oro">
+            <h2><i class="fa-solid fa-star"></i> Reglas de Oro para el Usuario</h2>
+            <p>Es indispensable que el usuario respete las siguientes directrices al preparar las plantillas para evitar fallos de importación:</p>
+            
+            <ul class="rules-list">
+                <li>
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <div>
+                        <strong>Formatos de Fecha:</strong>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.95rem;">Asegúrese de estructurar las fechas en formato <span class="code-box">AAAA-MM-DD</span> (ej. <span class="code-box">2026-01-31</span>) o como fecha nativa de Excel. Evite términos informales como "fin de mes".</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-spell-check"></i>
+                    <div>
+                        <strong>Consistencia de Catálogos (Mayúsculas y Acentos):</strong>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.95rem;">Los conceptos de ingreso/gasto y los nombres de las cajas deben coincidir exactamente con los configurados en el sistema (ej. escribir <span class="code-box">Servicios Basicos</span> sin acento causará error si el sistema espera <span class="code-box">Servicios Básicos</span>).</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-id-card"></i>
+                    <div>
+                        <strong>Consistencia de Nombres de Alumnos y Proveedores:</strong>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.95rem;">En las plantillas de transacciones (ingresos/egresos), el nombre de la persona debe coincidir exactamente con la plantilla maestra correspondiente. Si registró "Juan Pedro Pérez Gómez", no ingrese "Juan Pérez" en los cobros de 2026.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-coins"></i>
+                    <div>
+                        <strong>Valores Numéricos (Puntos vs. Comas):</strong>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>No incluir textos ni símbolos de moneda:</strong> No escriba "Bs", "$" ni separadores de miles de tipo texto (ej: use <span class="code-box">1250</span> o <span class="code-box">1250.50</span>, evite <span class="code-box">1.250 Bs</span>).</p>
+                        <p style="margin: 0; font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Si usa Excel (.xlsx):</strong> Ingrese los números de forma normal según su sistema regional (ya sea con coma <span class="code-box">1250,50</span> o punto <span class="code-box">1250.50</span>). Excel almacena los números de forma pura internamente y el importador los leerá de forma correcta. Asegúrese de que el formato de la celda sea **Número** o **General** (no formato de texto).</p>
+                        <p style="margin: 0; font-size: 0.95rem;"><strong>Si usa CSV (.csv):</strong> Como el CSV es texto plano, el separador decimal recomendado es el **punto (`.`)** (ej. <span class="code-box">15266.75</span>). Si su CSV utiliza comas como decimales, asegúrese de guardar el archivo con punto y coma (<span class="code-box">;</span>) como delimitador de columnas para evitar fallos estructurales.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Script de navegación dinámica y utilidades -->
+    <script>
+        function toggleFormLink(btn) {
+            const link = document.getElementById('form-link');
+            if (link.style.display === 'none') {
+                link.style.display = 'inline';
+                btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Ocultar Enlace';
+                btn.style.backgroundColor = 'var(--color-cyan)';
+            } else {
+                link.style.display = 'none';
+                btn.innerHTML = '<i class="fa-solid fa-eye"></i> Revelar Enlace';
+                btn.style.backgroundColor = 'var(--color-orange)';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.sidebar-nav a');
+            const sections = document.querySelectorAll('section, header');
+
+            function changeActiveLink() {
+                let index = sections.length;
+
+                while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
+                
+                links.forEach((link) => link.classList.remove('active'));
+                
+                // Mapear el link adecuado
+                const currentId = sections[index].getAttribute('id') || 'intro';
+                const activeLink = document.querySelector(`.sidebar-nav a[href="#${currentId}"]`);
+                if (activeLink) activeLink.classList.add('active');
+            }
+
+            changeActiveLink();
+            window.addEventListener('scroll', changeActiveLink);
+        });
+    </script>
+</body>
+</html>
