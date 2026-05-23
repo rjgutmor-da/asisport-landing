@@ -28,15 +28,15 @@ const SplitLanding = ({ onNavigate }) => {
     <div className="relative w-full h-screen overflow-hidden bg-[#0A0A0A] font-sans">
       
       {/* ENCABEZADO SUPERIOR */}
-      <div className="absolute top-10 md:top-16 left-0 w-full z-50 pointer-events-none flex flex-col items-center justify-center px-4">
+      <div className="absolute top-6 md:top-16 left-0 w-full z-50 pointer-events-none flex flex-col items-center justify-center px-4">
         <h1 
-          className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl text-white font-bold text-center tracking-[-0.02em] uppercase max-w-[1000px] mb-4 leading-tight drop-shadow-xl"
+          className="text-lg sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl text-white font-bold text-center tracking-[-0.02em] uppercase max-w-[1000px] mb-2 md:mb-4 leading-tight drop-shadow-xl"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
           LAS VICTORIAS SE CONSTRUYEN DENTRO Y FUERA DE LA CANCHA
         </h1>
         <p 
-          className="text-base md:text-xl text-[#D1D5DB] text-center max-w-3xl drop-shadow-lg font-medium"
+          className="text-xs sm:text-base md:text-xl text-[#D1D5DB] text-center max-w-3xl drop-shadow-lg font-medium"
           style={{ fontFamily: 'var(--font-subtitle)' }}
         >
           Lleva el control total de tu escuela y profesionaliza la comunicación con las familias para escalar tu club al siguiente nivel.
@@ -62,10 +62,10 @@ const SplitLanding = ({ onNavigate }) => {
         {/* Overlay oscuro para legibilidad */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/80 to-transparent"></div>
         
-        <div className="relative z-20 w-1/2 pl-12 md:pl-24 pr-8 text-white flex flex-col justify-center h-full">
+        <div className="relative z-20 w-1/2 pl-4 sm:pl-12 md:pl-24 pr-4 sm:pr-8 text-white flex flex-col justify-center h-full pt-16 md:pt-0">
           <div className={`transition-all duration-700 transform ${hoveredSide === 'left' ? 'scale-110 translate-x-4' : 'scale-100'}`}>
-            <img src="/AsiSport.png" alt="AsiSport Logo" className="h-16 md:h-24 mb-6 object-contain" />
-            <p className="text-xl md:text-2xl text-[#A0A0A0] font-medium mb-8 max-w-lg">
+            <img src="/AsiSport.png" alt="AsiSport Logo" className="h-8 sm:h-12 md:h-20 mb-4 md:mb-6 object-contain" />
+            <p className="text-xs sm:text-base md:text-2xl text-[#A0A0A0] font-medium mb-6 md:mb-8 max-w-lg">
               Toma asistencia en 1 minuto y comunícate con los padres en 1 clic
             </p>
             <button 
@@ -100,10 +100,10 @@ const SplitLanding = ({ onNavigate }) => {
         {/* Overlay oscuro para legibilidad (de derecha a izquierda) */}
         <div className="absolute inset-0 bg-gradient-to-l from-[#0A0A0A]/80 to-transparent"></div>
         
-        <div className="relative z-30 w-1/2 pr-12 md:pr-24 pl-8 text-white flex flex-col justify-center h-full items-end text-right">
+        <div className="relative z-30 w-1/2 pr-4 sm:pr-12 md:pr-24 pl-4 sm:pl-8 text-white flex flex-col justify-center h-full items-end text-right pt-16 md:pt-0">
           <div className={`transition-all duration-700 transform ${hoveredSide === 'right' ? 'scale-110 -translate-x-4' : 'scale-100'}`}>
-            <img src="/SaaSport.png" alt="SaaSport Logo" className="h-16 md:h-24 mb-6 object-contain ml-auto" />
-            <p className="text-xl md:text-2xl text-[#A0A0A0] font-medium mb-8 max-w-lg ml-auto">
+            <img src="/SaaSport.png" alt="SaaSport Logo" className="h-8 sm:h-12 md:h-20 mb-4 md:mb-6 object-contain ml-auto" />
+            <p className="text-xs sm:text-base md:text-2xl text-[#A0A0A0] font-medium mb-6 md:mb-8 max-w-lg ml-auto">
               Potencia la rentabilidad de tu club, control de pagos y finanzas claras
             </p>
             <button 
