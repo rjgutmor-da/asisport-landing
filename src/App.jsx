@@ -1,36 +1,22 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import SocialProof from './components/SocialProof';
-import ProblemSolution from './components/ProblemSolution';
-import VisualDemo from './components/VisualDemo';
-import HowItWorks from './components/HowItWorks';
-import Benefits from './components/Benefits';
-import { Testimonial, FinalCTA, Footer } from './components/FinalSections';
-import Pricing from './components/Pricing';
+import React, { useState } from 'react';
+import SplitLanding from './components/SplitLanding';
+import AsisportPage from './components/AsisportPage';
+import SaasportPage from './components/SaasportPage';
 
 function App() {
-  return (
-    <div className="min-h-screen flex flex-col pt-20">
-      <Navbar />
-      
-      <main className="flex-grow">
-         <HeroSection />
-         <SocialProof />
-         <ProblemSolution />
-         <VisualDemo />
-         <HowItWorks />
-         <Benefits />
-         <Testimonial />
-         <Pricing />
-         
-         <div className="px-4 sm:px-6 lg:px-8 mt-12 bg-white">
-            <FinalCTA />
-         </div>
-      </main>
+  const [currentPage, setCurrentPage] = useState('split');
 
-      <Footer />
-    </div>
+  const handleNavigate = (page) => {
+    setCurrentPage(page);
+    window.scrollTo(0, 0);
+  };
+
+  return (
+    <>
+      {currentPage === 'split' && <SplitLanding onNavigate={handleNavigate} />}
+      {currentPage === 'asisport' && <AsisportPage onBack={() => handleNavigate('split')} />}
+      {currentPage === 'saasport' && <SaasportPage onBack={() => handleNavigate('split')} />}
+    </>
   );
 }
 

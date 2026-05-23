@@ -1,15 +1,26 @@
 import React from 'react';
 
-const Navbar = () => {
+const Navbar = ({ onBack }) => {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
+          {/* Back Button y Logo */}
+          <div className="flex-shrink-0 flex items-center gap-4">
+            {onBack && (
+              <button 
+                onClick={onBack}
+                className="text-gray-600 hover:text-[#FF6B35] transition-colors flex items-center justify-center p-2 rounded-full hover:bg-gray-100 group"
+                aria-label="Volver a la Landing Page"
+              >
+                <svg className="w-6 h-6 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+              </button>
+            )}
             <img 
               className="h-12 w-auto" 
-              src="/LogoSaasport.png" 
+              src="/LogoHorizontal.png" 
               alt="AsiSport Logo" 
             />
           </div>

@@ -1,14 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-light: #4ade80; /* Verde más claro (aprox Tailwind green-400) */
-  --color-primary: #16a34a;       /* Verde base (aprox Tailwind green-600) */
-  --color-primary-dark: #15803d;  /* Verde oscuro (aprox Tailwind green-700) */
+  --color-bg-main: #0A0A0A;
+  --color-surface: #1A1A1A;
+  --color-surface-hover: #222222;
+  --color-input: #121212;
+  --color-border: #2D2D2D;
+
+  --color-primary: #FF6B35;
+  --color-primary-hover: #FF8555;
   
-  --color-secondary: #f3f4f6;
-  --color-secondary-dark: #1f2937;
-  
+  --color-text-main: #FFFFFF;
+  --color-text-sec: #A0A0A0;
+  --color-text-ter: #6B7280;
+
+  --color-success: #00D26A;
+  --color-info: #0A84FF;
+  --color-danger: #FF3B30;
+  --color-warning: #FFB020;
+  --color-arquero: #9D4EDD;
+
   --font-sans: "Inter", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-subtitle: "Plus Jakarta Sans", sans-serif;
 }
 
 html {
@@ -16,30 +30,48 @@ html {
 }
 
 body {
-  background-color: white;
-  color: var(--color-secondary-dark);
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Botones base grandes y cuadrados según instrucción */
+.font-brush {
+  font-family: "Permanent Marker", cursive;
+}
+
+@utility glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.glass-panel:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@utility glow-primary {
+  box-shadow: 0 0 20px -5px rgba(255, 107, 53, 0.3);
+}
+.glow-primary:hover {
+  box-shadow: 0 0 25px 0px rgba(255, 107, 53, 0.5);
+}
+
 @layer components {
   .btn-primary {
     @apply inline-flex items-center justify-center;
-    @apply px-8 py-4 text-lg font-bold text-white;
+    @apply px-8 py-4 text-lg font-semibold text-white;
     @apply transition-all duration-300;
-    @apply bg-primary rounded-xl;
-    @apply hover:bg-primary-dark hover:shadow-lg hover:-translate-y-1;
-    @apply focus:outline-none focus:ring-4 focus:ring-primary/50;
+    @apply bg-[var(--color-primary)] rounded-xl glow-primary border border-white/10;
+    @apply hover:bg-[var(--color-primary-hover)] hover:-translate-y-1;
+    @apply focus:outline-none focus:ring-4 focus:ring-[#FF6B35]/50;
   }
   
   .btn-secondary {
-    @apply inline-flex items-center justify-center;
-    @apply px-8 py-4 text-lg font-bold text-primary;
-    @apply transition-all duration-300;
-    @apply bg-blue-50 border-2 border-primary/20 rounded-xl;
-    @apply hover:bg-blue-100 hover:border-primary/40;
-    @apply focus:outline-none focus:ring-4 focus:ring-primary/20;
+    @apply inline-flex items-center justify-center glass-panel;
+    @apply px-8 py-4 text-lg font-medium text-white;
+    @apply transition-all duration-300 rounded-xl;
+    @apply hover:-translate-y-1;
+    @apply focus:outline-none focus:ring-4 focus:ring-white/20;
   }
 }
