@@ -81,11 +81,8 @@ export const Footer = () => {
             </svg>
             WhatsApp: +591 74631123
           </a>
-          <a href="mailto:rjgutmor@gmail.com" className="hover:text-white transition-colors">
-            rjgutmor@gmail.com
-          </a>
-          <a href="/plantillas_migracion_2026.html" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-light hover:underline transition-colors">
-            Cronograma de Implementación 2026
+          <a href="mailto:saasfactorygutmor@gmail.com" className="hover:text-white transition-colors">
+            saasfactorygutmor@gmail.com
           </a>
           <p className="text-gray-500">
             Copyright © {new Date().getFullYear()} AsiSport by Saas Factory

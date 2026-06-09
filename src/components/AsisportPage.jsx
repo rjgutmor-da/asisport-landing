@@ -7,7 +7,7 @@ import VisualDemo from './VisualDemo';
 import HowItWorks from './HowItWorks';
 import Benefits from './Benefits';
 import { Testimonial, FinalCTA, Footer } from './FinalSections';
-import Pricing from './Pricing';
+
 
 const AsisportPage = ({ onBack }) => {
   return (
@@ -22,7 +22,7 @@ const AsisportPage = ({ onBack }) => {
          <HowItWorks />
          <Benefits />
          <Testimonial />
-         <Pricing />
+
          
          <div className="px-4 sm:px-6 lg:px-8 mt-12">
             <FinalCTA />
