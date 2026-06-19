@@ -15,6 +15,10 @@ export async function getTestimonialMetrics() {
     }
 
     // 2. Si no hay caché o expiró, consultar a la vista pública de Supabase
+    if (!supabase) {
+      throw new Error('El cliente de Supabase no está configurado.');
+    }
+
     const { data: metricas, error } = await supabase
       .from('metricas_landing')
       .select('*');
