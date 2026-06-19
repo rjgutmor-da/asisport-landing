@@ -20,7 +20,7 @@ export default function Testimonios() {
       name: "Ramón Quiroga Anaquin",
       school: "Planeta FC",
       logo: "/logos/logo-planetafc.png",
-      photo: "https://ui-avatars.com/api/?name=Ramon+Quiroga&background=FF6B35&color=fff&size=400&rounded=false", // Placeholder 3:4 aspect ratio visually
+      photo: "/RamonPlanetafc.png",
       text: "Ahora tengo control total de las asistencias de los deportistas, por mes y por semana, lo que facilita las convocatorias a campeonatos; además de tener a mano las deudas de mensualidades que puedo cobrar y mis saldos en caja.",
       metricsKey: "Planeta FC"
     },
