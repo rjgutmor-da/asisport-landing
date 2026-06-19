@@ -1,6 +1,6 @@
 import { supabase } from './supabaseClient';
 
-const CACHE_KEY = 'saasport_metrics_cache_v3';
+const CACHE_KEY = 'saasport_metrics_cache_v4';
 const CACHE_EXPIRY_MS = 7 * 24 * 60 * 60 * 1000; // 7 días en milisegundos
 
 export async function getTestimonialMetrics() {
