@@ -112,7 +112,7 @@ const SplitLanding = ({ onNavigate }) => {
         
         <div className="relative z-30 w-1/2 pr-4 sm:pr-12 md:pr-24 pl-4 sm:pl-8 text-white flex flex-col justify-center h-full items-end text-right pt-16 md:pt-0">
           <div className={`transition-all duration-700 transform ${hoveredSide === 'right' ? 'scale-110 -translate-x-4' : 'scale-100'}`}>
-            <img src="/SaaSport.png" alt="SaaSport Logo" className="h-8 sm:h-12 md:h-20 mb-4 md:mb-6 object-contain ml-auto" />
+            <img src="/SaaSport-a.png" alt="SaaSport Logo" className="h-8 sm:h-12 md:h-20 mb-4 md:mb-6 object-contain ml-auto" />
             <p className="text-xs sm:text-base md:text-2xl text-[#A0A0A0] font-medium mb-6 md:mb-8 max-w-lg ml-auto">
               Potencia la rentabilidad de tu club, control de pagos y finanzas claras
             </p>

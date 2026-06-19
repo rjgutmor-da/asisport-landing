@@ -1,0 +1,41 @@
+import React from 'react';
+
+export default function CarruselAliados() {
+  const logos = [
+    { src: '/logos/logo-planetafc.png', alt: 'Planeta FC' },
+    { src: '/logos/logo_canito.png', alt: 'El Cañito' },
+    { src: '/logos/logo-interstars.png', alt: 'Inter Stars Santa Cruz' },
+    { src: '/logos/logo-detaquito.png', alt: 'De Taquito' },
+    { src: '/logos/logo_guaracachi.png', alt: 'Guaracachi' },
+  ];
+
+  // Duplicamos para efecto de loop infinito suave
+  const duplicatedLogos = [...logos, ...logos, ...logos];
+
+  return (
+    <section className="py-16 bg-[var(--color-surface)] border-y border-[var(--color-border)] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-10 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-white">
+          Escuelas que <span className="font-highlight text-[var(--color-primary)]">confían en nosotros</span>
+        </h2>
+      </div>
+
+      <div className="relative w-full flex items-center overflow-hidden">
+        {/* Gradients para desvanecer los bordes */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-[var(--color-surface)] to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-[var(--color-surface)] to-transparent z-10" />
+
+        <div className="flex w-fit animate-scroll items-center gap-16 md:gap-24 px-10">
+          {duplicatedLogos.map((logo, idx) => (
+            <img 
+              key={idx}
+              src={logo.src}
+              alt={logo.alt}
+              className="h-20 md:h-28 w-auto object-contain filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer drop-shadow-md"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
