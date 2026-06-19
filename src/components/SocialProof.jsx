@@ -3,11 +3,11 @@ import { obtenerEstadisticasLanding } from '../services/statsService';
 
 const SocialProof = () => {
   const [estadisticas, setEstadisticas] = useState({
-    escuelas: '3',
-    alumnos: '856',
-    sucursales: '11',
-    entrenadores: '27',
-    administradores: '8'
+    escuelas: '5',
+    alumnos: '950',
+    sucursales: '13',
+    entrenadores: '36',
+    administradores: '11'
   });
 
   useEffect(() => {

@@ -52,11 +52,11 @@ export async function getTestimonialMetrics() {
     return metricsData;
   } catch (error) {
     console.error('Error fetching metrics from Supabase:', error);
-    // Devolver datos por defecto realistas en caso de error para no mostrar 0 en la UI
+    // Devolver datos por defecto reales obtenidos de la BD
     return {
-      'Planeta FC': { alumnos: 245, usuarios: 5, cobros: 980 },
-      'El Cañito': { alumnos: 312, usuarios: 6, cobros: 1248 },
-      'Inter Stars Santa Cruz': { alumnos: 189, usuarios: 4, cobros: 756 }
+      'Planeta FC': { alumnos: 309, usuarios: 9, cobros: 675 },
+      'El Cañito': { alumnos: 164, usuarios: 11, cobros: 59 },
+      'Inter Stars Santa Cruz': { alumnos: 464, usuarios: 15, cobros: 0 }
     };
   }
 }
