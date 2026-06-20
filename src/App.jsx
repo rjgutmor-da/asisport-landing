@@ -4,6 +4,7 @@ import Beneficios from './components/Beneficios';
 import Testimonios from './components/Testimonios';
 import CTA from './components/CTA';
 import CarruselAliados from './components/CarruselAliados';
+import Galeria from './components/Galeria';
 import Footer from './components/Footer';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Testimonios />
       <CTA />
       <CarruselAliados />
+      <Galeria />
       <Footer />
     </main>
   );
