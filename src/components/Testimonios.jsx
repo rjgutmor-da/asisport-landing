@@ -28,7 +28,7 @@ export default function Testimonios() {
       name: "Andrés Álvarez",
       school: "El Cañito",
       logo: "/logos/logo_canito.png",
-      photo: "https://ui-avatars.com/api/?name=Andres+Alvarez&background=0A84FF&color=fff&size=400&rounded=false", // Placeholder
+      photo: "/AndresCanito.png",
       text: "Todo el desorden de listas y deudas quedó atrás. Con SaaSport tengo la escuela organizada de punta a punta: pagos, saldos, asistencias y hasta el detalle de los cumpleaños. Es la herramienta que siempre busqué y no encontraba.",
       metricsKey: "El Cañito"
     },
