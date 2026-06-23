@@ -27,7 +27,7 @@ export default function Footer() {
                 <Mail size={20} />
                 <span>saasfactorygutmor@gmail.com</span>
               </a>
-              <a href="#" className="flex items-center gap-3 text-[var(--color-text-sec)] hover:text-[var(--color-primary)] transition-colors">
+              <a href="https://www.facebook.com/SaaSportLatam/" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-[var(--color-text-sec)] hover:text-[var(--color-primary)] transition-colors">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>

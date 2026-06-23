@@ -75,5 +75,5 @@
 
 * **WhatsApp:** `+591 74631123`
 * **Email:** `saasfactorygutmor@gmail.com`
-* **Redes Sociales:** Facebook `[Enlace pendiente de creación]`
+* **Redes Sociales:** Facebook `https://www.facebook.com/SaaSportLatam/`
 * **Copyright:** © 2026 SaaSport - Todos los derechos reservados
