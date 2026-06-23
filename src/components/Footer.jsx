@@ -39,11 +39,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-[var(--color-border)] pt-8 flex flex-col md:flex-row items-center justify-between text-[var(--color-text-ter)] text-sm">
-          <p>© 2026 SaaSport - Todos los derechos reservados</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Términos de Servicio</a>
-            <a href="#" className="hover:text-white transition-colors">Privacidad</a>
-          </div>
+          <p>© 2026 SaaSport - by SaasFactory</p>
         </div>
       </div>
     </footer>
