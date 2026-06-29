@@ -58,6 +58,19 @@ export default function Galeria() {
             </div>
           ))}
         </div>
+        
+        {/* Enlace al manual interactivo */}
+        <div className="mt-16 flex justify-center">
+          <a 
+            href="/infograf_a_interactiva.html" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#1A1A1A] border border-white/10 hover:border-[var(--color-primary)] rounded-full text-white font-semibold text-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,107,53,0.3)] hover:scale-105"
+          >
+            <span className="text-[var(--color-primary)] group-hover:animate-pulse">▶</span>
+            Ver ejemplo toma asistencia
+          </a>
+        </div>
       </div>
     </section>
   );

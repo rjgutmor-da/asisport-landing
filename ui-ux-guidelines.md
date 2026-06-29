@@ -15,8 +15,8 @@ Este documento contiene las directrices de diseño unificadas para AsiSport y Sa
   - Bold (700) / Black (900) para encabezados principales.
 
 ### AsiSport (Acento / Estilo Deportivo)
-- **Familia tipográfica secundaria**: `Permanent Marker, cursive` (utilizado a través de la clase `.font-brush`).
-- **Uso**: Acentos decorativos, frases motivacionales o llamadas a la acción con un toque "deportivo" y agresivo.
+- **Familia tipográfica secundaria**: `Montserrat, sans-serif` (utilizado para textos destacados y decorativos con clases como `.font-highlight`).
+- **Uso**: Acentos decorativos, frases motivacionales o llamadas a la acción con un toque moderno y estructurado. También se utilizan `Plus Jakarta Sans` y `Space Grotesk` para complementar.
 
 ---
 
@@ -74,4 +74,4 @@ Ambos sistemas comparten un núcleo oscuro (Dark Mode) con acentos vibrantes que
 1. **Diseño Premium**: Mantener el fondo oscuro (`#0A0A0A`) como predeterminado. Evitar colores genéricos y abusar del naranja (`#FF6B35`) para resaltar elementos clave.
 2. **Interactividad**: Incluir micro-animaciones en los botones (efectos de hover con `transform: translateY(-2px)` y aumento de la sombra/brillo).
 3. **Jerarquía Tipográfica**: Usar `Inter` en pesos muy altos (800/900) para los títulos (H1/H2) y pesos normales (400) con texto secundario (`#A0A0A0`) para las descripciones.
-4. **Detalles Deportivos**: Incorporar detalles esporádicos con la fuente `Permanent Marker` para enfatizar el carácter deportivo de las aplicaciones.
+4. **Detalles Decorativos**: Incorporar detalles esporádicos con la fuente `Montserrat` (u otras secundarias como `Space Grotesk`) para enfatizar elementos visuales y el carácter premium de las aplicaciones.
