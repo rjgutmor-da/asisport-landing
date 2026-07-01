@@ -8,6 +8,7 @@ const LOGOS_FALLBACK = [
   { src: '/logos/logo-detaquito.png', alt: 'De Taquito' },
   { src: '/logos/logo_guaracachi.png', alt: 'Guaracachi' },
   { src: '/logos/logo_halcones.png', alt: 'Proyecto Halcones C.A.S.S.' },
+  { src: '/logos/logo_olimpo.png', alt: 'Olimpo Soccer' },
 ];
 
 export default function CarruselAliados() {
