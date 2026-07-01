@@ -7,6 +7,7 @@ const LOGOS_FALLBACK = [
   { src: '/logos/logo-interstars.png', alt: 'Inter Stars Santa Cruz' },
   { src: '/logos/logo-detaquito.png', alt: 'De Taquito' },
   { src: '/logos/logo_guaracachi.png', alt: 'Guaracachi' },
+  { src: '/logos/logo_halcones.png', alt: 'Proyecto Halcones C.A.S.S.' },
 ];
 
 export default function CarruselAliados() {
