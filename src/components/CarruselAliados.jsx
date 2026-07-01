@@ -1,13 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { supabase } from '../services/supabaseClient';
+
+const LOGOS_FALLBACK = [
+  { src: '/logos/logo-planetafc.png', alt: 'Planeta FC' },
+  { src: '/logos/logo_canito.png', alt: 'El Cañito' },
+  { src: '/logos/logo-interstars.png', alt: 'Inter Stars Santa Cruz' },
+  { src: '/logos/logo-detaquito.png', alt: 'De Taquito' },
+  { src: '/logos/logo_guaracachi.png', alt: 'Guaracachi' },
+];
 
 export default function CarruselAliados() {
-  const logos = [
-    { src: '/logos/logo-planetafc.png', alt: 'Planeta FC' },
-    { src: '/logos/logo_canito.png', alt: 'El Cañito' },
-    { src: '/logos/logo-interstars.png', alt: 'Inter Stars Santa Cruz' },
-    { src: '/logos/logo-detaquito.png', alt: 'De Taquito' },
-    { src: '/logos/logo_guaracachi.png', alt: 'Guaracachi' },
-  ];
+  const [logos, setLogos] = useState(LOGOS_FALLBACK);
+
+  useEffect(() => {
+    async function cargarLogos() {
+      if (!supabase) return;
+      try {
+        const { data, error } = await supabase
+          .from('escuelas')
+          .select('nombre, logo_url')
+          .eq('activa', true)
+          .not('logo_url', 'is', null);
+
+        if (error) {
+          console.error('Error cargando logos de Supabase:', error.message);
+          return;
+        }
+
+        if (data && data.length > 0) {
+          const logosMapeados = data.map(escuela => ({
+            src: escuela.logo_url,
+            alt: escuela.nombre
+          }));
+          setLogos(logosMapeados);
+        }
+      } catch (err) {
+        console.error('Error al consultar escuelas en Supabase:', err);
+      }
+    }
+
+    cargarLogos();
+  }, []);
 
   // Duplicamos para efecto de loop infinito suave
   const duplicatedLogos = [...logos, ...logos, ...logos];
