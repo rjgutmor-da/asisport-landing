@@ -58,6 +58,12 @@
             .no-print {
                 display: none !important;
             }
+            .print-container {
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+            }
             .print-page {
                 page-break-after: always;
                 height: 297mm; /* Altura A4 aproximada */
@@ -99,24 +105,18 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                     </svg>
-                    <span>Volver al Inicio</span>
+                    <span>Página principal</span>
                 </a>
-                <!-- Botón Imprimir/Descargar PDF -->
-                <button onclick="window.print()" class="flex items-center gap-2 px-5 py-2 rounded-lg bg-brand-orange text-black font-semibold hover:bg-brand-orangeHover transition-all glow-orange text-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-                    </svg>
-                    <span>Imprimir / Guardar PDF</span>
-                </button>
             </div>
         </div>
     </header>
 
     <!-- Contenedor Principal (Soporta 2 Páginas) -->
-    <main class="max-w-7xl mx-auto px-4 md:px-6 py-8 flex flex-col gap-12">
+    <main class="max-w-7xl mx-auto px-4 md:px-6 py-8">
+        <div class="print-container bg-brand-surface rounded-2xl border border-brand-border p-6 md:p-10 shadow-2xl transition-colors duration-300 flex flex-col gap-12 md:gap-16">
 
-        <!-- ================= PÁGINA 1 ================= -->
-        <section id="page-1" class="print-page bg-brand-surface rounded-2xl border border-brand-border p-6 md:p-10 shadow-2xl transition-colors duration-300">
+            <!-- ================= PÁGINA 1 ================= -->
+            <section id="page-1" class="print-page">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 <!-- Columna Izquierda: Instrucciones Página 1 -->
@@ -130,7 +130,7 @@
                             <span class="text-brand-orange">Registro Rápido</span> de Asistencias
                         </h2>
                         <p class="text-gray-400 text-sm md:text-base mb-8 max-w-xl print-text-dark">
-                            Sigue esta guía secuencial diseñada para asegurar que el listado de tu cancha se complete sin contratiempos. Puedes interactuar con el teléfono inteligente de la derecha para familiarizarte con los botones.
+                            Sigue esta guía secuencial diseñada para asegurar que el listado de tu grupo se complete sin contratiempos.
                         </p>
 
                         <!-- Pasos del 1 al 3 -->
@@ -228,9 +228,11 @@
             </div>
         </section>
 
+        <!-- Separador visual en pantalla (se oculta al imprimir) -->
+        <hr class="no-print border-brand-border/40">
 
         <!-- ================= PÁGINA 2 ================= -->
-        <section id="page-2" class="print-page bg-brand-surface rounded-2xl border border-brand-border p-6 md:p-10 shadow-2xl transition-colors duration-300">
+        <section id="page-2" class="print-page">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 <!-- Columna Izquierda: Instrucciones Página 2 -->
@@ -328,6 +330,7 @@
             </div>
         </section>
 
+        </div>
     </main>
 
     <!-- JavaScript para interactividad y Simulación -->
