@@ -66,7 +66,7 @@ export default function CarruselAliados() {
               key={idx}
               src={logo.src}
               alt={logo.alt}
-              className="h-20 md:h-28 w-auto object-contain filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer drop-shadow-md"
+              className="h-20 md:h-28 w-auto object-contain opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300 cursor-pointer drop-shadow-md"
             />
           ))}
         </div>
