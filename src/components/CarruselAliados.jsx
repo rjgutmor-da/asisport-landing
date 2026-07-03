@@ -9,6 +9,7 @@ const LOGOS_FALLBACK = [
   { src: '/logos/logo_guaracachi.png', alt: 'Guaracachi' },
   { src: '/logos/logo_halcones.png', alt: 'Proyecto Halcones C.A.S.S.' },
   { src: '/logos/logo_olimpo.png', alt: 'Olimpo Soccer' },
+  { src: '/logos/logo-JhonCarinao.png', alt: 'Escuela de fútbol JHON CARINAO' },
 ];
 
 export default function CarruselAliados() {
