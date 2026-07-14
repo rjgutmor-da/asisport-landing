@@ -10,6 +10,7 @@ const LOGOS_FALLBACK = [
   { src: '/logos/logo_halcones.png', alt: 'Proyecto Halcones C.A.S.S.' },
   { src: '/logos/logo_olimpo.png', alt: 'Olimpo Soccer' },
   { src: '/logos/logo-JhonCarinao.png', alt: 'Escuela de fútbol JHON CARINAO' },
+  { src: '/logos/logo_golden.png', alt: '@ Golden club' },
 ];
 
 export default function CarruselAliados() {
