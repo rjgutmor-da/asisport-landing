@@ -7,7 +7,7 @@ const LOGOS_FALLBACK = [
   { src: '/logos/logo-interstars.png', alt: 'Inter Stars Santa Cruz' },
   { src: '/logos/logo-detaquito.png', alt: 'De Taquito' },
   { src: '/logos/logo_guaracachi.png', alt: 'Guaracachi' },
-  { src: '/logos/logo_halcones.png', alt: 'Proyecto Halcones C.A.S.S.' },
+  { src: '/logos/logo_halcones1.png', alt: 'Proyecto Halcones C.A.S.S.' },
   { src: '/logos/logo_olimpo.png', alt: 'Olimpo Soccer' },
   { src: '/logos/logo-JhonCarinao.png', alt: 'Escuela de fútbol JHON CARINAO' },
   { src: '/logos/logo_golden.png', alt: '@ Golden club' },
