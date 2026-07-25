@@ -11,6 +11,7 @@ const LOGOS_FALLBACK = [
   { src: '/logos/logo_olimpo.png', alt: 'Olimpo Soccer' },
   { src: '/logos/logo-JhonCarinao.png', alt: 'Escuela de fútbol JHON CARINAO' },
   { src: '/logos/logo_golden.png', alt: '@ Golden club' },
+  { src: '/logos/logo_2abril.png', alt: '2 de Abril' },
 ];
 
 export default function CarruselAliados() {
