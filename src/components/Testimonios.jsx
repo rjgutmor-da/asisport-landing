@@ -53,7 +53,7 @@ export default function Testimonios() {
             Otros directores de escuelas <span className="font-highlight text-[var(--color-primary)]">ya lo usan.</span>
           </h2>
           <p className="text-xl text-[var(--color-text-sec)] max-w-3xl mx-auto">
-            Más alumnos, más entrenadores y más pagos por controlar. SaaSport ya ayuda a escuelas deportivas en Santa Cruz.
+            Más alumnos, más entrenadores y más pagos por controlar. SaaSport ya ayuda a escuelas deportivas en Bolivia.
           </p>
         </div>
 
