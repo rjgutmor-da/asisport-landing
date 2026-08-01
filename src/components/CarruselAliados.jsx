@@ -12,6 +12,7 @@ const LOGOS_FALLBACK = [
   { src: '/logos/logo-JhonCarinao.png', alt: 'Escuela de fútbol JHON CARINAO' },
   { src: '/logos/logo_golden.png', alt: '@ Golden club' },
   { src: '/logos/logo_2abril.png', alt: '2 de Abril' },
+  { src: '/logos/logo-realfcool.png', alt: 'Real FC' },
 ];
 
 export default function CarruselAliados() {
@@ -50,6 +51,16 @@ export default function CarruselAliados() {
   // Duplicamos para efecto de loop infinito suave
   const duplicatedLogos = [...logos, ...logos, ...logos];
 
+  const handleImageError = (e, altName) => {
+    const fallback = LOGOS_FALLBACK.find(l => 
+      l.alt.toLowerCase().includes(altName.toLowerCase()) || 
+      altName.toLowerCase().includes(l.alt.toLowerCase())
+    );
+    if (fallback && e.target.src !== window.location.origin + fallback.src) {
+      e.target.src = fallback.src;
+    }
+  };
+
   return (
     <section className="py-16 bg-[var(--color-surface)] border-y border-[var(--color-border)] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-10 text-center">
@@ -69,6 +80,7 @@ export default function CarruselAliados() {
               key={idx}
               src={logo.src}
               alt={logo.alt}
+              onError={(e) => handleImageError(e, logo.alt)}
               className="h-20 md:h-28 w-auto object-contain opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300 cursor-pointer drop-shadow-md"
             />
           ))}
