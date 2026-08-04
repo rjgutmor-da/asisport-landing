@@ -220,20 +220,7 @@ const PricingModal = ({ isOpen, onClose }) => {
                   </ul>
                 </div>
 
-                <div className="mt-auto">
-                  <a 
-                    href={`https://wa.me/59174631123?text=Hola,%20me%20interesa%20el%20plan%20${plan.name}%20${includeSaasport[plan.key] ? 'con%20SaaSport' : ''}%20en%20pago%20${isAnnual ? 'anual' : 'mensual'}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`block w-full py-3 px-4 rounded-xl font-bold text-center transition-transform active:scale-95 ${
-                      plan.popular 
-                        ? 'bg-green-600 text-white hover:bg-green-700 shadow-md hover:shadow-lg' 
-                        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                    }`}
-                  >
-                    Elegir {plan.name}
-                  </a>
-                </div>
+
 
                 {/* Additional services info (tiny) */}
                 <div className="mt-4 pt-3 border-t border-dashed border-gray-200 text-center text-[10px] sm:text-xs text-gray-400">
