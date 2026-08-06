@@ -13,6 +13,7 @@ const LOGOS_FALLBACK = [
   { src: '/logos/logo_golden.png', alt: '@ Golden club' },
   { src: '/logos/logo_2abril.png', alt: '2 de Abril' },
   { src: '/logos/logo-realfcool.png', alt: 'Real FC' },
+  { src: '/logos/logo_VictorioJuniors.png', alt: 'Club Victorio Juniors' },
 ];
 
 export default function CarruselAliados() {
