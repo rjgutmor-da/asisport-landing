@@ -14,6 +14,7 @@ const LOGOS_FALLBACK = [
   { src: '/logos/logo_2abril.png', alt: '2 de Abril' },
   { src: '/logos/logo-realfcool.png', alt: 'Real FC' },
   { src: '/logos/logo_VictorioJuniors.png', alt: 'Club Victorio Juniors' },
+  { src: '/logos/logo_pasionfutbolera.png', alt: 'Pasion Futbolera' },
 ];
 
 export default function CarruselAliados() {
