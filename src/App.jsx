@@ -6,6 +6,7 @@ import CTA from './components/CTA';
 import CarruselAliados from './components/CarruselAliados';
 import Galeria from './components/Galeria';
 import Footer from './components/Footer';
+import { trackCompleteRegistration } from './services/pixelService';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
             href="https://docs.google.com/forms/d/e/1FAIpQLSfxRizmy_gdfFHa72SkMLA6Bb0bFIbh5StSEZy85dMdvYLjyg/viewform?usp=header"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackCompleteRegistration({ content_name: 'Formulario de Registro - Sección Final' })}
             className="inline-flex items-center justify-center bg-[var(--color-primary)] hover:bg-blue-600 text-white text-lg font-bold py-4 px-10 rounded-full transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)]"
           >
             Formulario de Registro

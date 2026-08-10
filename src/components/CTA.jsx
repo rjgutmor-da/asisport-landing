@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShieldCheck } from 'lucide-react';
+import { trackLead } from '../services/pixelService';
 
 export default function CTA() {
   return (
@@ -26,6 +27,7 @@ export default function CTA() {
             href="https://wa.me/59174631123?text=Hola,%20necesito%20agendar%20una%20reunion%20para%20conocer%20mas%20de%20SaaSport,"
             target="_blank" 
             rel="noreferrer"
+            onClick={() => trackLead({ content_name: 'Demostración WhatsApp - CTA' })}
             className="btn-primary w-full md:w-auto text-xl px-12 py-5 animate-pulse-slow"
           >
             Agendar demostración de 15 min

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, DollarSign, Smartphone, Users } from 'lucide-react';
+import { trackLead } from '../services/pixelService';
 
 export default function Hero() {
   return (
@@ -55,6 +56,7 @@ export default function Hero() {
             href="https://wa.me/59174631123?text=Hola,%20necesito%20agendar%20una%20reunion%20para%20conocer%20mas%20de%20SaaSport," 
             target="_blank" 
             rel="noreferrer"
+            onClick={() => trackLead({ content_name: 'Demostración WhatsApp - Hero' })}
             className="btn-primary mb-3"
           >
             Agendar demostración de 15 min
