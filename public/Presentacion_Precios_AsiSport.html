@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Presentación comercial de planes AsiSport y SaaSport">
+  <title>Planes AsiSport & SaaSport</title>
+  <style>
+    :root{--bg:#0a0a0a;--surface:#151515;--surface2:#1a1a1a;--line:#2d2d2d;--text:#fff;--muted:#a0a0a0;--orange:#ff6b35;--orange2:#ff8555;--green:#00d26a;--blue:#0a84ff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Segoe UI",Arial,sans-serif;overflow:hidden}.deck{height:100dvh}.slide{display:none;position:relative;width:100%;height:100%;min-height:600px;padding:clamp(48px,6vw,92px);overflow:hidden;background:radial-gradient(circle at 86% 12%,rgba(255,107,53,.12),transparent 28%),var(--bg)}.slide.active{display:flex;flex-direction:column}.slide:after{content:"";position:absolute;inset:auto -12% -35% 38%;height:55%;background:radial-gradient(ellipse,rgba(255,107,53,.08),transparent 65%);pointer-events:none}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}h1,h2,h3,p{margin-top:0}h1{max-width:980px;margin:18px 0 24px;font-size:clamp(48px,7vw,94px);line-height:.98;letter-spacing:-.055em}h2{margin:14px 0 14px;font-size:clamp(36px,4.5vw,64px);line-height:1.02;letter-spacing:-.04em}.lead{max-width:780px;color:#c8c8c8;font-size:clamp(18px,2vw,25px);line-height:1.55}.accent{color:var(--orange)}.topbar{display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:-.025em}.brand img{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 0 14px rgba(255,107,53,.25))}.brand small{display:block;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:3px}.content{position:relative;z-index:1;display:flex;flex:1;flex-direction:column;justify-content:center}.hero-mark{position:absolute;right:5vw;bottom:8vh;width:min(34vw,520px);opacity:.12;filter:grayscale(1)}.meta{display:flex;gap:24px;margin-top:40px;color:var(--muted);font-size:13px}.meta b{color:#fff}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}.card{position:relative;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:16px;padding:24px;min-width:0}.card.featured{border-color:var(--orange);box-shadow:0 0 34px -14px rgba(255,107,53,.55);transform:translateY(-8px)}.pill{display:inline-flex;border:1px solid rgba(255,107,53,.38);background:rgba(255,107,53,.1);color:var(--orange2);border-radius:999px;padding:6px 9px;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.plan{font-size:22px;font-weight:850;margin:18px 0 4px}.price{font-size:38px;font-weight:900;letter-spacing:-.04em}.price span{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:0}.card ul,.checklist{padding:0;margin:18px 0 0;list-style:none}.card li,.checklist li{padding:8px 0;border-top:1px solid rgba(255,255,255,.07);color:#c5c5c5;font-size:13px}.card li b{float:right;color:#fff}.split{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}.matrix{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}.matrix th,.matrix td{padding:16px 18px;border-bottom:1px solid var(--line);text-align:center}.matrix tr:last-child td{border-bottom:0}.matrix th:first-child,.matrix td:first-child{text-align:left}.matrix th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}.matrix td{font-size:15px}.matrix .total td{background:rgba(255,107,53,.08);color:#fff;font-weight:850}.stat{font-size:clamp(50px,7vw,88px);font-weight:900;letter-spacing:-.06em;color:var(--orange)}.note{color:var(--muted);font-size:14px;line-height:1.55}.addons{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px}.addon{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}.addon .value{font-size:38px;font-weight:900;color:var(--orange);margin:14px 0 6px}.addon p{color:var(--muted);line-height:1.5;margin:0}.formula{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:32px 0}.formula .box{padding:18px 22px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-weight:800}.formula .result{background:rgba(0,210,106,.1);border-color:rgba(0,210,106,.35);color:var(--green)}.formula i{color:var(--muted);font-style:normal;font-weight:900}.cta{display:inline-flex;align-items:center;justify-content:center;width:max-content;margin-top:26px;padding:14px 20px;border-radius:9px;background:linear-gradient(135deg,var(--orange),#e95420);color:#fff;font-weight:850;box-shadow:0 0 24px -7px rgba(255,107,53,.55)}.footer{position:absolute;left:clamp(48px,6vw,92px);right:clamp(48px,6vw,92px);bottom:24px;z-index:4;display:flex;justify-content:space-between;align-items:center;color:#6f6f6f;font-size:11px}.controls{position:fixed;z-index:10;right:32px;bottom:32px;display:flex;align-items:center;gap:16px}.controls button{width:70px;height:70px;border:2px solid var(--orange);border-radius:14px;background:rgba(255,107,53,.15);color:var(--orange);font-size:36px;font-weight:bold;cursor:pointer;transition:all 0.2s}.controls button:hover{background:var(--orange);color:#fff;transform:scale(1.1);box-shadow:0 0 24px rgba(255,107,53,0.6)}.counter{min-width:70px;text-align:center;color:#fff;font:800 16px/1 Inter,Arial}.progress{position:fixed;z-index:12;top:0;left:0;height:3px;background:var(--orange);transition:width .25s}.kbd{padding:3px 7px;border:1px solid #3a3a3a;border-radius:5px;color:#8a8a8a}
+    .addons{grid-template-columns:repeat(3,1fr)}.mode-selector{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.mode-button{flex:1;min-width:170px;border:1px solid var(--line);border-radius:10px;background:#101010;color:var(--muted);padding:12px 15px;cursor:pointer;font:800 13px Inter,"Segoe UI",Arial,sans-serif}.mode-button:hover{border-color:var(--orange);color:#fff}.mode-button.active{border-color:var(--orange);background:rgba(255,107,53,.12);color:var(--orange2);box-shadow:0 0 18px -10px rgba(255,107,53,.8)}.mode-caption{margin:12px 0 -8px;color:var(--muted);font-size:13px}.quote-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch;margin-top:18px}.quote-form,.quote-result{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.field label,.options-title{display:block;margin-bottom:7px;color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.field input{width:100%;border:1px solid var(--line);border-radius:9px;background:#0e0e0e;color:#fff;padding:12px;font:700 16px Inter,"Segoe UI",Arial,sans-serif;outline:none}.field input:focus{border-color:var(--orange)}.quote-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.check-option{display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:9px;padding:11px;color:#d2d2d2;font-size:13px;cursor:pointer}.check-option input{accent-color:var(--orange)}.billing{display:flex;gap:8px;margin-top:18px}.billing button{flex:1;border:1px solid var(--line);border-radius:9px;background:#0e0e0e;color:var(--muted);padding:11px;cursor:pointer;font-weight:800}.billing button.active{border-color:var(--orange);background:rgba(255,107,53,.12);color:var(--orange2)}.quote-result{display:flex;flex-direction:column;justify-content:center}.result-plan{margin:8px 0 2px;font-size:30px;font-weight:900}.result-total{margin:12px 0 4px;color:var(--green);font-size:clamp(38px,4vw,58px);font-weight:900;letter-spacing:-.05em}.result-period{color:var(--muted);font-size:12px}.breakdown{margin-top:15px;padding-top:12px;border-top:1px solid var(--line);color:#c8c8c8;font-size:13px;line-height:1.75}.breakdown-row{display:flex;justify-content:space-between;gap:15px}.breakdown-row b{color:#fff}.quote-alert{color:var(--orange2);font-size:15px;line-height:1.55}.annual-detail{margin-top:12px;color:var(--muted);font-size:12px;line-height:1.6}
+    @media(max-width:900px){body{overflow:auto}.deck{height:auto}.slide{height:auto;min-height:100dvh}.grid{grid-template-columns:repeat(2,1fr)}.split,.quote-layout{grid-template-columns:1fr}.hero-mark{display:none}.controls{right:16px;bottom:16px;gap:8px}.controls button{width:50px;height:50px;font-size:24px;border-radius:10px}.counter{min-width:50px;font-size:14px}.addons{grid-template-columns:1fr}.quote-result{min-height:260px}}@media(max-width:560px){.slide{padding:32px 22px 68px}.grid,.addons,.fields,.quote-options{grid-template-columns:1fr}.card.featured{transform:none}.footer{left:22px;right:22px}.meta{flex-direction:column;gap:8px}.matrix th,.matrix td{padding:10px 7px;font-size:11px}}
+    @media print{@page{size:landscape;margin:0}body{overflow:visible;background:#fff}.slide,.slide.active{display:flex!important;width:100vw;height:100vh;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}.controls,.progress{display:none}}
+  </style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<main class="deck" aria-live="polite">
+  <section class="slide active">
+    <div class="topbar"><div class="brand"><img src="icon-512.png" alt="Logo AsiSport"><div>AsiSport <span class="accent">&</span> SaaSport<small>Gestión deportiva inteligente</small></div></div><span class="eyebrow">Propuesta de planes · 2026</span></div>
+    <div class="content"><span class="eyebrow">Oferta comercial</span><h1>Un plan para cada etapa de tu <span class="accent">academia.</span></h1><p class="lead">Contrata AsiSport o SaaSport por separado, o ambos como combo, con capacidad que crece al ritmo de tu operación.</p><div class="meta"><span><b>4</b> niveles de servicio</span><span>Desde <b>15 USD/mes</b></span><span><b>15%</b> de ahorro anual</span></div></div>
+    <img class="hero-mark" src="icon-512.png" alt=""><div class="footer"><span>AsiSport & SaaSport</span><span>Usa ← → para navegar</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="topbar"><div class="brand"><img src="icon-512.png" alt="Logo"><div>AsiSport <span class="accent">&</span> SaaSport</div></div><span class="eyebrow">Portafolio</span></div>
+    <div class="content"><span class="eyebrow">Planes mensuales</span><h2>Elige cómo crecer. Precio <span class="accent">predecible.</span></h2>
+      <div class="mode-selector" aria-label="Modalidad de contratación">
+        <button type="button" class="mode-button" data-mode="asisport">Solo AsiSport</button>
+        <button type="button" class="mode-button" data-mode="saasport">Solo SaaSport</button>
+        <button type="button" class="mode-button active" data-mode="combo">Combo AsiSport + SaaSport</button>
+      </div>
+      <p class="mode-caption" id="modeCaption">La solución completa para tu operación deportiva y financiera.</p>
+      <div class="grid" id="planGrid"></div>
+    </div><div class="footer"><span>Precios expresados en USD</span><span>02</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="topbar"><div class="brand"><img src="icon-512.png" alt="Logo"><div>AsiSport <span class="accent">&</span> SaaSport</div></div><span class="eyebrow">Servicios opcionales</span></div>
+    <div class="content"><span class="eyebrow">Personaliza tu plan</span><h2>Adicionales simples y <span class="accent">transparentes.</span></h2><div class="addons"><article class="addon"><span class="pill">Verificación</span><div class="value">5–7 USD</div><h3>Fotos de registro</h3><p>5 USD/mes en planes Básico y Crecimiento. 7 USD/mes en Profesional y Completa.</p></article><article class="addon"><span class="pill">Bienestar</span><div class="value">5–7 USD</div><h3>Perfil Médico</h3><p>5 USD/mes en planes Básico y Crecimiento. 7 USD/mes en Profesional y Completa.</p></article><article class="addon"><span class="pill">Equipo</span><div class="value">2 USD</div><h3>Usuario adicional</h3><p>Precio mensual por cada cuenta adicional para staff, entrenadores o administración.</p></article></div><p class="note" style="margin-top:20px">Los servicios adicionales no están incluidos en el total mensual base mostrado para cada plan.</p></div>
+    <div class="footer"><span>Configuración flexible</span><span>03</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="topbar"><div class="brand"><img src="icon-512.png" alt="Logo"><div>AsiSport <span class="accent">&</span> SaaSport</div></div><span class="eyebrow">Facturación anual</span></div>
+    <div class="content"><div class="split"><div><span class="eyebrow">Beneficio por compromiso anual</span><div class="stat">15% menos</div><h2>Doce meses de operación, con ahorro desde el primer día.</h2><p class="lead">El descuento se aplica al total de la suscripción anual.</p></div><div class="card"><span class="pill" id="annualPlanLabel">Ejemplo · Combo · Crecimiento</span><div class="formula"><span class="box" id="annualFormula">35 × 12</span><i>−</i><span class="box">15%</span><i>=</i><span class="box result" id="annualTotal">357 USD/año</span></div><p class="note" id="annualDetail">Precio regular anual: 420 USD<br>Ahorro anual: 63 USD<br>Equivalente mensual: 29,75 USD</p></div></div></div>
+    <div class="footer"><span>Ejemplo sin servicios adicionales</span><span>04</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="topbar"><div class="brand"><img src="icon-512.png" alt="Logo"><div>AsiSport <span class="accent">&</span> SaaSport</div></div><span class="eyebrow">Cotizador automático</span></div>
+    <div class="content"><span class="eyebrow">Tu configuración ideal</span><h2 style="font-size:clamp(32px,3.7vw,52px)">Calcula tu inversión <span class="accent">al instante.</span></h2>
+      <div class="quote-layout">
+        <form class="quote-form" id="quoteForm">
+          <span class="options-title">Modalidad de contratación</span><div class="mode-selector" style="margin-top:0" aria-label="Modalidad para cotizar">
+            <button type="button" class="mode-button" data-mode="asisport">Solo AsiSport</button>
+            <button type="button" class="mode-button" data-mode="saasport">Solo SaaSport</button>
+            <button type="button" class="mode-button active" data-mode="combo">Combo completo</button>
+          </div>
+          <div class="fields" style="margin-top:18px">
+            <div class="field"><label for="students">Alumnos</label><input id="students" type="number" min="0" step="1" value="100" inputmode="numeric"></div>
+            <div class="field"><label for="branches">Sucursales</label><input id="branches" type="number" min="0" step="1" value="1" inputmode="numeric"></div>
+            <div class="field"><label for="users">Usuarios</label><input id="users" type="number" min="0" step="1" value="5" inputmode="numeric"></div>
+          </div>
+          <div class="quote-options">
+            <label class="check-option"><input id="photos" type="checkbox"> Fotos de registro</label>
+            <label class="check-option"><input id="medical" type="checkbox"> Perfil Médico</label>
+          </div>
+          <div class="billing" aria-label="Modalidad de pago"><button type="button" class="active" data-billing="monthly">Mensual</button><button type="button" data-billing="annual">Anual · 15% menos</button></div>
+        </form>
+        <div class="quote-result" id="quoteResult" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="footer"><span>Valores calculados en USD</span><span>05</span></div>
+  </section>
+</main>
+<nav class="controls" aria-label="Navegación de diapositivas"><button id="prev" aria-label="Anterior">←</button><span class="counter" id="counter">1 / 5</span><button id="next" aria-label="Siguiente">→</button></nav>
+<script>
+  const slides=[...document.querySelectorAll('.slide')],counter=document.getElementById('counter'),progress=document.getElementById('progress');let current=0;
+  function show(n){current=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===current));counter.textContent=`${current+1} / ${slides.length}`;progress.style.width=`${(current+1)/slides.length*100}%`;history.replaceState(null,'',`#${current+1}`)}
+  document.getElementById('prev').onclick=()=>show(current-1);document.getElementById('next').onclick=()=>show(current+1);
+  addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(current+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(current-1)}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1)});
+  let x=0;addEventListener('touchstart',e=>x=e.changedTouches[0].screenX,{passive:true});addEventListener('touchend',e=>{const d=e.changedTouches[0].screenX-x;if(Math.abs(d)>50)show(current+(d<0?1:-1))},{passive:true});
+  const modes={
+    asisport:{label:'Solo AsiSport',shortLabel:'AsiSport',caption:'Gestión deportiva inteligente para tu academia.',plans:[
+      {name:'Básico',students:100,branches:1,users:3,price:15,addon:5},
+      {name:'Crecimiento',students:250,branches:3,users:6,price:20,addon:5},
+      {name:'Profesional',students:400,branches:4,users:10,price:30,addon:7},
+      {name:'Completa',students:600,branches:6,users:15,price:35,addon:7}
+    ]},
+    saasport:{label:'Solo SaaSport',shortLabel:'SaaSport',caption:'Control financiero claro para tu operación.',plans:[
+      {name:'Básico',students:100,branches:1,users:3,price:15,addon:5},
+      {name:'Crecimiento',students:250,branches:3,users:6,price:20,addon:5},
+      {name:'Profesional',students:400,branches:4,users:10,price:30,addon:7},
+      {name:'Completa',students:600,branches:6,users:15,price:35,addon:7}
+    ]},
+    combo:{label:'Combo AsiSport + SaaSport',shortLabel:'Combo',caption:'La solución completa para tu operación deportiva y financiera.',plans:[
+      {name:'Básico',students:100,branches:1,users:5,price:25,addon:5},
+      {name:'Crecimiento',students:250,branches:3,users:12,price:35,addon:5},
+      {name:'Profesional',students:400,branches:4,users:20,price:50,addon:7},
+      {name:'Completa',students:600,branches:6,users:30,price:65,addon:7}
+    ]}
+  };
+  const quoteInputs=['students','branches','users','photos','medical'].map(id=>document.getElementById(id));
+  const quoteResult=document.getElementById('quoteResult');let billing='monthly',selectedMode='combo';
+  const money=value=>value.toLocaleString('es-BO',{minimumFractionDigits:2,maximumFractionDigits:2});
+  function renderPlanGrid(){
+    const plans=modes[selectedMode].plans;
+    document.getElementById('modeCaption').textContent=modes[selectedMode].caption;
+    document.getElementById('planGrid').innerHTML=plans.map((plan,index)=>`<article class="card${index===1?' featured':''}"><span class="pill">${index===1?'Más elegido':index===0?'Para comenzar':index===2?'Alto volumen':'Máxima escala'}</span><div class="plan">${plan.name}</div><div class="price">${plan.price} <span>USD / mes</span></div><ul><li>Alumnos <b>${plan.students}</b></li><li>Sucursal${plan.branches===1?'':'es'} <b>${plan.branches}</b></li><li>Usuarios <b>${plan.users}</b></li></ul></article>`).join('');
+  }
+  function renderAnnualExample(){
+    const plan=modes[selectedMode].plans[1],regular=plan.price*12,total=regular*.85,savings=regular-total;
+    document.getElementById('annualPlanLabel').textContent=`Ejemplo · ${modes[selectedMode].shortLabel} · ${plan.name}`;
+    document.getElementById('annualFormula').textContent=`${plan.price} × 12`;
+    document.getElementById('annualTotal').textContent=`${money(total)} USD/año`;
+    document.getElementById('annualDetail').innerHTML=`Precio regular anual: ${money(regular)} USD<br>Ahorro anual: ${money(savings)} USD<br>Equivalente mensual: ${money(total/12)} USD`;
+  }
+  function setMode(mode){
+    selectedMode=mode;
+    document.querySelectorAll('[data-mode]').forEach(button=>{const active=button.dataset.mode===mode;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active))});
+    renderPlanGrid();renderAnnualExample();calculateQuote();
+  }
+  function calculateQuote(){
+    const students=Math.max(0,Math.floor(Number(document.getElementById('students').value)||0));
+    const branches=Math.max(0,Math.floor(Number(document.getElementById('branches').value)||0));
+    const users=Math.max(0,Math.floor(Number(document.getElementById('users').value)||0));
+    const plan=modes[selectedMode].plans.find(item=>students<=item.students&&branches<=item.branches);
+    if(!plan){quoteResult.innerHTML='<span class="pill">Capacidad especial</span><div class="result-plan">Cotización personalizada</div><p class="quote-alert">La configuración supera los 600 alumnos o las 6 sucursales. Contáctanos para preparar una propuesta a medida.</p>';return}
+    const extraUsers=Math.max(0,users-plan.users),extraUsersCost=extraUsers*2;
+    const photosCost=document.getElementById('photos').checked?plan.addon:0;
+    const medicalCost=document.getElementById('medical').checked?plan.addon:0;
+    const monthly=plan.price+extraUsersCost+photosCost+medicalCost;
+    const annualRegular=monthly*12,annual=annualRegular*.85,savings=annualRegular-annual;
+    const shown=billing==='annual'?annual:monthly,period=billing==='annual'?'USD / año':'USD / mes';
+    const rows=[`<div class="breakdown-row"><span>Plan ${plan.name} · ${modes[selectedMode].shortLabel}</span><b>${money(plan.price)}</b></div>`,`<div class="breakdown-row"><span>Capacidad incluida</span><b>${plan.students} alumnos · ${plan.branches} suc. · ${plan.users} usuarios</b></div>`];
+    if(extraUsers)rows.push(`<div class="breakdown-row"><span>${extraUsers} usuario${extraUsers===1?'':'s'} adicional${extraUsers===1?'':'es'}</span><b>${money(extraUsersCost)}</b></div>`);
+    if(photosCost)rows.push(`<div class="breakdown-row"><span>Fotos de registro</span><b>${money(photosCost)}</b></div>`);
+    if(medicalCost)rows.push(`<div class="breakdown-row"><span>Perfil Médico</span><b>${money(medicalCost)}</b></div>`);
+    quoteResult.innerHTML=`<span class="pill">Plan recomendado</span><div class="result-plan">${plan.name}</div><div class="result-total">${money(shown)}</div><div class="result-period">${period}</div><div class="breakdown">${rows.join('')}</div>${billing==='annual'?`<div class="annual-detail">Precio regular anual: ${money(annualRegular)} USD<br>Ahorro anual: <b>${money(savings)} USD</b><br>Equivalente mensual: ${money(annual/12)} USD</div>`:''}`;
+  }
+  quoteInputs.forEach(input=>input.addEventListener('input',calculateQuote));
+  document.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>setMode(button.dataset.mode)));
+  document.querySelectorAll('[data-billing]').forEach(button=>button.addEventListener('click',()=>{billing=button.dataset.billing;document.querySelectorAll('[data-billing]').forEach(item=>item.classList.toggle('active',item===button));calculateQuote()}));
+  setMode(selectedMode);
+  const hash=parseInt(location.hash.slice(1),10);show(Number.isFinite(hash)?hash-1:0);
+</script>
+</body>
+</html>
