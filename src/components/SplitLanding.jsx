@@ -43,7 +43,7 @@ const SplitLanding = ({ onNavigate }) => {
           className="text-lg sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl text-white font-bold text-center tracking-[-0.02em] uppercase max-w-[1000px] mb-2 md:mb-4 leading-tight drop-shadow-xl"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
-          LAS VICTORIAS SE CONSTRUYEN DENTRO Y FUERA DE LA CANCHA
+          LAS VICTORIAS SE CONSTRUYEN DENTRO Y FUERA DE LA GRUPO
         </h1>
         <p 
           className="text-xs sm:text-base md:text-xl text-[#D1D5DB] text-center max-w-3xl drop-shadow-lg font-medium"
@@ -65,7 +65,7 @@ const SplitLanding = ({ onNavigate }) => {
         <div 
           className="absolute inset-0 opacity-40 mix-blend-screen transition-transform duration-1000 bg-cover bg-center"
           style={{ 
-             backgroundImage: "url('/cancha_cenital.png')",
+             backgroundImage: "url('/grupo_cenital.png')",
              transform: hoveredSide === 'left' ? 'scale(1.05)' : 'scale(1)'
           }}
         ></div>

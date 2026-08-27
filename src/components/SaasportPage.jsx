@@ -122,7 +122,7 @@ const SaasportPage = ({ onBack }) => {
               Logística y Programación
             </h2>
             <p className="text-lg text-[var(--color-text-sec)] mb-6">
-              Crea calendarios de partidos, asigna canchas y árbitros sin conflictos. Nuestro sistema inteligente optimiza el uso de tus recursos para maximizar la eficiencia.
+              Crea calendarios de partidos, asigna grupos y árbitros sin conflictos. Nuestro sistema inteligente optimiza el uso de tus recursos para maximizar la eficiencia.
             </p>
             <ul className="text-[var(--color-text-sec)] space-y-3 mb-8">
               <li className="flex items-center gap-2">

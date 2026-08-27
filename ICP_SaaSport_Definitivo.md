@@ -22,7 +22,7 @@ Este documento detalla el Perfil de Cliente Ideal (ICP) para **SaaSport**, un so
 * **Rol Principal:** **Dueño-Fundador y Director Técnico (Profesor)**.
 * **Rasgos Psicológicos y Profesionales:**
   * Altamente apasionado por el fútbol y la formación de talento joven.
-  * Su enfoque y felicidad están en la cancha dando clases y dirigiendo partidos, no frente a la computadora haciendo tareas administrativas.
+  * Su enfoque y felicidad están en la grupo dando clases y dirigiendo partidos, no frente a la computadora haciendo tareas administrativas.
   * Tiempo extremadamente escaso; opera en modo multi-tarea (logística de partidos, entrenamientos, cobros).
   * No tiene formación contable o financiera nativa, por lo que rechaza interfaces complejas u hojas de cálculo saturadas de datos.
 * **Usuarios Secundarios:** Profesores/entrenadores de apoyo y asistentes administrativos (usualmente familiares o personal a tiempo parcial).
@@ -34,14 +34,14 @@ Este documento detalla el Perfil de Cliente Ideal (ICP) para **SaaSport**, un so
 
 1. **Descontrol e Incertidumbre de Mensualidades:** No saber con precisión matemática quién pagó el mes en curso y quién arrastra deudas del mes anterior.
 2. **Falta de Control en Asistencias:** Dificultad para registrar quién asiste y cómo esto impacta en los reclamos de los padres ("mi hijo no vino medio mes, no corresponde pagar completo").
-3. **Fugas de Flujo de Caja:** Desconocimiento del balance neto real entre las cuotas que ingresan y los egresos fijos/variables (pago de alquiler de canchas, árbitros, indumentaria, sueldo de profesores).
+3. **Fugas de Flujo de Caja:** Desconocimiento del balance neto real entre las cuotas que ingresan y los egresos fijos/variables (pago de alquiler de grupos, árbitros, indumentaria, sueldo de profesores).
 
 ---
 
 ## 🏆 4. Propuesta de Valor y Funcionalidades Más Valoradas
 *En orden de prioridad e impacto percibido por el cliente actual:*
 1. **Control de Mensualidades:** Visualización rápida del estado de pagos mensual.
-2. **Toma de Asistencias Móvil:** Registro rápido desde el celular directamente en la cancha por el profesor.
+2. **Toma de Asistencias Móvil:** Registro rápido desde el celular directamente en la grupo por el profesor.
 3. **Control de Cuentas por Cobrar:** Alertas e historial para evitar que las deudas se acumulen.
 4. **Módulo de Ingresos y Egresos:** Reporte simplificado de flujo de caja libre de tecnicismos contables.
 
