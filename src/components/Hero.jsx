@@ -1,6 +1,7 @@
 import React from 'react';
 import { Calendar, DollarSign, Smartphone, Users } from 'lucide-react';
 import { trackLead } from '../services/pixelService';
+import VideoDemo from './VideoDemo';
 
 export default function Hero() {
   return (
@@ -65,6 +66,9 @@ export default function Hero() {
             Incluye un mes de prueba totalmente gratis.
           </p>
         </div>
+
+        {/* Video de Demostración */}
+        <VideoDemo />
       </div>
     </section>
   );
