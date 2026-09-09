@@ -39,19 +39,19 @@ function App() {
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6">
-            ¿Listo para <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-blue-300">profesionalizar</span> tu academia?
+            Obtén tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-blue-300">cotización personalizada</span>
           </h2>
           <p className="text-xl text-[var(--color-text-sec)] mb-10 max-w-2xl mx-auto">
-            Únete a la nueva generación de escuelas deportivas que están simplificando su gestión financiera y operativa con SaaSport.
+            Contanos sobre tu escuela deportiva y te enviaremos una cotización adaptada a tus necesidades. Sin compromiso.
           </p>
           <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfxRizmy_gdfFHa72SkMLA6Bb0bFIbh5StSEZy85dMdvYLjyg/viewform?usp=header"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd-AaJ1zYJQRedcBWQJZlmOqPYw52VCdBMaf4-1-lqSpYIchQ/viewform?usp=sharing&ouid=102135117129779815260"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackCompleteRegistration({ content_name: 'Formulario de Registro - Sección Final' })}
+            onClick={() => trackCompleteRegistration({ content_name: 'Solicitar Cotización' })}
             className="inline-flex items-center justify-center bg-[var(--color-primary)] hover:bg-blue-600 text-white text-lg font-bold py-4 px-10 rounded-full transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)]"
           >
-            Formulario de Registro
+            Solicitar cotización
           </a>
         </div>
       </section>
