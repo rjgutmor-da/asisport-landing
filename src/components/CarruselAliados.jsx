@@ -16,6 +16,7 @@ const LOGOS_FALLBACK = [
   { src: '/logos/logo_VictorioJuniors.png', alt: 'Club Victorio Juniors' },
   { src: '/logos/logo_pasionfutbolera.png', alt: 'Pasion Futbolera' },
   { src: '/logos/logo_cab.png', alt: 'Club Deportivo Águia Brasil' },
+  { src: '/logos/logo_lokillosfc.png', alt: 'Lokillos FC' },
 ];
 
 export default function CarruselAliados() {
