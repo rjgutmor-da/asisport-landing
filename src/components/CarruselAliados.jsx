@@ -17,6 +17,7 @@ const LOGOS_FALLBACK = [
   { src: '/logos/logo_pasionfutbolera.png', alt: 'Pasion Futbolera' },
   { src: '/logos/logo_cab.png', alt: 'Club Deportivo Águia Brasil' },
   { src: '/logos/logo_lokillosfc.png', alt: 'Lokillos FC' },
+  { src: '/logos/logo_SanLuis.png', alt: 'Escuela de Futbol San Luis' },
 ];
 
 export default function CarruselAliados() {
