@@ -18,6 +18,7 @@ const LOGOS_FALLBACK = [
   { src: '/logos/logo_cab.png', alt: 'Club Deportivo Águia Brasil' },
   { src: '/logos/logo_lokillosfc.png', alt: 'Lokillos FC' },
   { src: '/logos/logo_SanLuis.png', alt: 'Escuela de Futbol San Luis' },
+  { src: '/logos/logo-metegol.png', alt: 'METEGOL FC' },
 ];
 
 export default function CarruselAliados() {
