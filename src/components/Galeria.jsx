@@ -71,6 +71,8 @@ export default function Galeria() {
             Ver ejemplo toma asistencia
           </a>
 
+          {/* Botón de precios temporalmente oculto */}
+          {/* 
           <a 
             href="/Presentacion_Precios_AsiSport.html" 
             target="_blank" 
@@ -79,6 +81,7 @@ export default function Galeria() {
           >
             Desde USD 15 mensuales, ver precios
           </a>
+          */}
         </div>
       </div>
     </section>
