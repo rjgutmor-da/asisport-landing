@@ -45,7 +45,7 @@ function App() {
             Contanos sobre tu escuela deportiva y te enviaremos una cotización adaptada a tus necesidades. Sin compromiso.
           </p>
           <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSd-AaJ1zYJQRedcBWQJZlmOqPYw52VCdBMaf4-1-lqSpYIchQ/viewform?usp=sharing&ouid=102135117129779815260"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd-AaJ1zYJQRedcBWQJZlmOqPYw52VCdBMaf4-1-lqSpYIchQ/viewform?usp=header"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackCompleteRegistration({ content_name: 'Solicitar Cotización' })}
