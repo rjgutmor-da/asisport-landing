@@ -12,11 +12,6 @@ const itemsGaleria = [
     subtitulo: 'Toda la información necesaria está aquí.',
   },
   {
-    id: 3,
-    imagen: '/AlumnosMockup.png',
-    subtitulo: 'Comunicación directa vía WhatsApp.',
-  },
-  {
     id: 4,
     imagen: '/SaaSport-Pagina 1.png',
     subtitulo: 'Las finanzas que entienden el fútbol.',

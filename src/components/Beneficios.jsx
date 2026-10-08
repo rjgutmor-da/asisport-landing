@@ -5,7 +5,7 @@ export default function Beneficios() {
   const benefits = [
     {
       title: "Asistencia en 1 minuto",
-      description: "Tomá asistencia con el celular en la raya de cal. Tené el respaldo cuando un padre consulte sobre las asistencias.",
+      description: "Tomá asistencia con el celular desde tu lugar de entrenamiento. Tené el reporte a mano cuando un padre consulte sobre las asistencias.",
       icon: <CheckCircle2 size={32} />,
       color: "text-[#00D26A]",
       bgColor: "bg-[#00D26A]/10",
